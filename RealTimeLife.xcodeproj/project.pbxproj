@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A04FAD1158AA57700228542 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A04FAD0158AA57700228542 /* CoreLocation.framework */; };
-		2A04FAD3158AA58300228542 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A04FAD2158AA58300228542 /* QuartzCore.framework */; };
-		2A04FAD4158AA59100228542 /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAF062D15897638002ACE84 /* libMapView.a */; };
-		2A04FAD6158AA5A000228542 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A04FAD5158AA5A000228542 /* libsqlite3.dylib */; };
-		2A04FAD8158AA5B700228542 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A04FAD7158AA5B700228542 /* libz.dylib */; };
 		2A15D10515897286007D4F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A15D10415897286007D4F45 /* UIKit.framework */; };
 		2A15D10715897286007D4F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A15D10615897286007D4F45 /* Foundation.framework */; };
 		2A15D10915897286007D4F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A15D10815897286007D4F45 /* CoreGraphics.framework */; };
@@ -31,13 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A04FACE158AA55D00228542 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2AAF061D15897638002ACE84 /* MapView.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B8C974130E8A19B2007D16AD;
-			remoteInfo = MapView;
-		};
 		2A15D12F15897286007D4F45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A15D0F715897286007D4F45 /* Project object */;
@@ -62,10 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A04FAD0158AA57700228542 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2A04FAD2158AA58300228542 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2A04FAD5158AA5A000228542 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		2A04FAD7158AA5B700228542 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2A15D10015897286007D4F45 /* RealTimeLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealTimeLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A15D10415897286007D4F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A15D10615897286007D4F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,11 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A04FAD8158AA5B700228542 /* libz.dylib in Frameworks */,
-				2A04FAD6158AA5A000228542 /* libsqlite3.dylib in Frameworks */,
-				2A04FAD4158AA59100228542 /* libMapView.a in Frameworks */,
-				2A04FAD3158AA58300228542 /* QuartzCore.framework in Frameworks */,
-				2A04FAD1158AA57700228542 /* CoreLocation.framework in Frameworks */,
 				2A15D10515897286007D4F45 /* UIKit.framework in Frameworks */,
 				2A15D10715897286007D4F45 /* Foundation.framework in Frameworks */,
 				2A15D10915897286007D4F45 /* CoreGraphics.framework in Frameworks */,
@@ -125,10 +104,6 @@
 		2A15D0F515897286007D4F45 = {
 			isa = PBXGroup;
 			children = (
-				2A04FAD7158AA5B700228542 /* libz.dylib */,
-				2A04FAD5158AA5A000228542 /* libsqlite3.dylib */,
-				2A04FAD2158AA58300228542 /* QuartzCore.framework */,
-				2A04FAD0158AA57700228542 /* CoreLocation.framework */,
 				2AAF061D15897638002ACE84 /* MapView.xcodeproj */,
 				2A15D10A15897286007D4F45 /* RealTimeLife */,
 				2A15D13115897286007D4F45 /* RealTimeLifeTests */,
@@ -228,7 +203,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2A04FACF158AA55D00228542 /* PBXTargetDependency */,
 			);
 			name = RealTimeLife;
 			productName = RealTimeLife;
@@ -364,11 +338,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2A04FACF158AA55D00228542 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MapView;
-			targetProxy = 2A04FACE158AA55D00228542 /* PBXContainerItemProxy */;
-		};
 		2A15D13015897286007D4F45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2A15D0FF15897286007D4F45 /* RealTimeLife */;
@@ -464,9 +433,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RealTimeLife/RealTimeLife-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK\"";
 				INFOPLIST_FILE = "RealTimeLife/RealTimeLife-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -477,9 +444,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RealTimeLife/RealTimeLife-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK\"";
 				INFOPLIST_FILE = "RealTimeLife/RealTimeLife-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
