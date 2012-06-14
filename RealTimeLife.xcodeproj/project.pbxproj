@@ -33,6 +33,20 @@
 			remoteGlobalIDString = 2A15D0FF15897286007D4F45;
 			remoteInfo = RealTimeLife;
 		};
+		2AAF062C15897638002ACE84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AAF061D15897638002ACE84 /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17F31EFA1331050A00122B16;
+			remoteInfo = MapView;
+		};
+		2AAF062E15897638002ACE84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AAF061D15897638002ACE84 /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2BF3078F0F8AC5C0007014EE;
+			remoteInfo = "Unit Tests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +74,7 @@
 		2A15D13515897286007D4F45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A15D13715897286007D4F45 /* RealTimeLifeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealTimeLifeTests.h; sourceTree = "<group>"; };
 		2A15D13815897286007D4F45 /* RealTimeLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealTimeLifeTests.m; sourceTree = "<group>"; };
+		2AAF061D15897638002ACE84 /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "mapbox-ios-sdk/MapView/MapView.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +104,7 @@
 		2A15D0F515897286007D4F45 = {
 			isa = PBXGroup;
 			children = (
+				2AAF061D15897638002ACE84 /* MapView.xcodeproj */,
 				2A15D10A15897286007D4F45 /* RealTimeLife */,
 				2A15D13115897286007D4F45 /* RealTimeLifeTests */,
 				2A15D10315897286007D4F45 /* Frameworks */,
@@ -164,6 +180,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2AAF061E15897638002ACE84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AAF062D15897638002ACE84 /* libMapView.a */,
+				2AAF062F15897638002ACE84 /* RM Unit Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +246,12 @@
 			mainGroup = 2A15D0F515897286007D4F45;
 			productRefGroup = 2A15D10115897286007D4F45 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2AAF061E15897638002ACE84 /* Products */;
+					ProjectRef = 2AAF061D15897638002ACE84 /* MapView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2A15D0FF15897286007D4F45 /* RealTimeLife */,
@@ -228,6 +259,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2AAF062D15897638002ACE84 /* libMapView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMapView.a;
+			remoteRef = 2AAF062C15897638002ACE84 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AAF062F15897638002ACE84 /* RM Unit Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "RM Unit Tests.app";
+			remoteRef = 2AAF062E15897638002ACE84 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2A15D0FE15897286007D4F45 /* Resources */ = {
@@ -455,6 +503,7 @@
 				2A15D13E15897286007D4F45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A15D13F15897286007D4F45 /* Build configuration list for PBXNativeTarget "RealTimeLifeTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +512,7 @@
 				2A15D14115897286007D4F45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
