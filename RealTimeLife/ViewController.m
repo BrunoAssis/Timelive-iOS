@@ -19,51 +19,6 @@
 
 @synthesize mapView;
 
-#pragma mark MKMapViewDelegate
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-{
-	NSLog(@"welcome into the map view annotation");
-    
-	// Se for a locação do usuário retorna nulo e não troca nada.
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-	
-	static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
-	MKPinAnnotationView* pinView = [[MKPinAnnotationView alloc]
-									 initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
-    
-    //Seta se vc que que o pino caia com animação.
-	pinView.animatesDrop=YES;
-    
-    //Seta se o pino pode ser clicável ou não.
-	pinView.canShowCallout=YES;
-    
-    //Deixa o pino roxinho
-	//pinView.pinColor=MKPinAnnotationColorPurple;
-    
-    //Cria o botão de detalhe: Setinha azul.
-	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-	[rightButton setTitle:annotation.title forState:UIControlStateNormal];
-	[rightButton addTarget:self
-					action:@selector(showDetails:)
-		  forControlEvents:UIControlEventTouchUpInside];
-	pinView.rightCalloutAccessoryView = rightButton;
-    
-    
-    //Seta imagem de profile para o pin
-    /*
-     *TODO: Acertar o caminho da imagem.
-     */
-	UIImageView *profileIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"../resources/profile.png"]];
-	pinView.leftCalloutAccessoryView = profileIconView;
-    
-    
-	return pinView;
-}
-
-
 
 - (void)viewDidLoad
 {
@@ -72,9 +27,9 @@
     //Seta o delegate do mapView para a classe.
     mapView.delegate=self;
     
-    //Array para carregar todos os pins posteriormente.
-    NSMutableArray* annotations=[[NSMutableArray alloc] init];
-    
+    //##############################################
+    //TUDO ABAIXO DEVE SER SUBSTITUÍDO POR UMA CLASSE COM REQUISIÇÃO
+    //AO BANCO DE DADOS ETC.   
     
     //Seta 4 coordenadas para colocar os pins,
 	CLLocationCoordinate2D theCoordinate1;
@@ -100,24 +55,28 @@
 	myAnnotation1.coordinate=theCoordinate1;
 	myAnnotation1.title=@"É foda, truta!";
 	myAnnotation1.subtitle=@"Mauricio Vaglio.";
+    myAnnotation1.idUser = 1;
 	
 	MyAnnotation* myAnnotation2=[[MyAnnotation alloc] init];
 	
 	myAnnotation2.coordinate=theCoordinate2;
 	myAnnotation2.title=@"Acho certo sorvete com bacon!";
 	myAnnotation2.subtitle=@"Bruno Assis";
+    myAnnotation1.idUser = 2;
 	
 	MyAnnotation* myAnnotation3=[[MyAnnotation alloc] init];
 	
 	myAnnotation3.coordinate=theCoordinate3;
 	myAnnotation3.title=@"Vai tomar no cú, fdp!";
 	myAnnotation3.subtitle=@"Ádamo Morone";
+    myAnnotation1.idUser = 3;
 	
 	MyAnnotation* myAnnotation4=[[MyAnnotation alloc] init];
 	
 	myAnnotation4.coordinate=theCoordinate4;
 	myAnnotation4.title=@"Viv le Zé";
 	myAnnotation4.subtitle=@"Mauricio Vaglio";
+    myAnnotation1.idUser = 1;
 	
     
     
@@ -126,15 +85,7 @@
 	[mapView addAnnotation:myAnnotation2];
 	[mapView addAnnotation:myAnnotation3];
 	[mapView addAnnotation:myAnnotation4];
-	
-	[annotations addObject:myAnnotation1];
-	[annotations addObject:myAnnotation2];
-	[annotations addObject:myAnnotation3];
-	[annotations addObject:myAnnotation4];
-    
-    NSLog(@"%d",[annotations count]);
-    
-    
+   //##############################################
 	
 }
 
@@ -162,6 +113,61 @@
     [mapView setRegion:adjustedRegion animated:YES];   
     
 }
+
+
+#pragma mark MKMapViewDelegate
+
+
+//Método que lê todos os Annotations que foram associados ao mapa.
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    
+	// Se for a locação do usuário retorna nulo e não troca nada.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+	
+	static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    
+    MKAnnotationView* pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+    
+    //Seta se vc quer que o pino caia com animação.
+    //Esta propriedade não existe para MKAnnotationView. Funciona apenas para MKPinAnnotationView.
+    //TODO: Pesquisar se existe forma de fazer.
+	//pinView.animatesDrop=YES;
+    
+    //Seta se o pino pode ser clicável ou não.
+	pinView.canShowCallout=YES;
+    
+    
+    //Cria o botão de detalhe: Setinha azul.
+	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+	[rightButton setTitle:annotation.title forState:UIControlStateNormal];
+	[rightButton addTarget:self
+					action:@selector(showDetails:)
+		  forControlEvents:UIControlEventTouchUpInside];
+	pinView.rightCalloutAccessoryView = rightButton;
+    
+    
+    /*
+     Aqui fica o set do pin atual.
+     Minha sugestão é que seja customizado um PIN para cada tipo de dado que for postado.
+     Ex: Imagem, o pin é vermelho - Video, o pin é verde - Ambos, pin branco etc.
+     */
+    
+    pinView.image = [UIImage imageNamed:@"event.png"];
+    
+    
+    
+    //Seta imagem de profile para o pin 
+    //COMENTÁRIO: Não acho que seja muito necessária esta imagem (que precisa ser reajustada, no caso abaixo).
+    //A imagem pode aparecer no momento quem o usuário clica no "More Info".
+	UIImageView *profileIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile-avatar.gif"]];
+	pinView.leftCalloutAccessoryView = profileIconView;
+    
+    
+	return pinView;
+}
+
 
 
 
