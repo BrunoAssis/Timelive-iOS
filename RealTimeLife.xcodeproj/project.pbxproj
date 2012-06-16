@@ -24,6 +24,8 @@
 		2A86BE5A158AC51B009EFFC9 /* RealTimeLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A86BE59158AC51B009EFFC9 /* RealTimeLifeTests.m */; };
 		2A86BE64158AC662009EFFC9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A86BE63158AC662009EFFC9 /* MapKit.framework */; };
 		2A86BE68158ACED2009EFFC9 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A86BE67158ACED2009EFFC9 /* MyAnnotation.m */; };
+		2AF44E54158C105300DEBE0B /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF44E52158C105300DEBE0B /* DetailController.m */; };
+		2AF44E55158C105300DEBE0B /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF44E53158C105300DEBE0B /* DetailController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		2A86BE63158AC662009EFFC9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2A86BE66158ACED2009EFFC9 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		2A86BE67158ACED2009EFFC9 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		2AF44E51158C105300DEBE0B /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
+		2AF44E52158C105300DEBE0B /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
+		2AF44E53158C105300DEBE0B /* DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 		2A78AE64158AE6A9004C7DA3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A86BE40158AC51B009EFFC9 /* MainStoryboard.storyboard */,
 				2A837954158BE33200F7BF66 /* profile-avatar.gif */,
 				2A837950158BE0CD00F7BF66 /* event.png */,
 			);
@@ -131,13 +137,10 @@
 		2A86BE34158AC51B009EFFC9 /* RealTimeLife */ = {
 			isa = PBXGroup;
 			children = (
+				2AF44E50158C103000DEBE0B /* DetailsController */,
+				2AF44E4F158BFBC300DEBE0B /* MainController */,
 				2A78AE64158AE6A9004C7DA3 /* resources */,
 				2A86BE65158ACEAC009EFFC9 /* classes */,
-				2A86BE3D158AC51B009EFFC9 /* AppDelegate.h */,
-				2A86BE3E158AC51B009EFFC9 /* AppDelegate.m */,
-				2A86BE40158AC51B009EFFC9 /* MainStoryboard.storyboard */,
-				2A86BE43158AC51B009EFFC9 /* ViewController.h */,
-				2A86BE44158AC51B009EFFC9 /* ViewController.m */,
 				2A86BE35158AC51B009EFFC9 /* Supporting Files */,
 			);
 			path = RealTimeLife;
@@ -180,6 +183,27 @@
 				2A86BE67158ACED2009EFFC9 /* MyAnnotation.m */,
 			);
 			name = classes;
+			sourceTree = "<group>";
+		};
+		2AF44E4F158BFBC300DEBE0B /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				2A86BE3D158AC51B009EFFC9 /* AppDelegate.h */,
+				2A86BE3E158AC51B009EFFC9 /* AppDelegate.m */,
+				2A86BE43158AC51B009EFFC9 /* ViewController.h */,
+				2A86BE44158AC51B009EFFC9 /* ViewController.m */,
+			);
+			name = MainController;
+			sourceTree = "<group>";
+		};
+		2AF44E50158C103000DEBE0B /* DetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				2AF44E51158C105300DEBE0B /* DetailController.h */,
+				2AF44E52158C105300DEBE0B /* DetailController.m */,
+				2AF44E53158C105300DEBE0B /* DetailController.xib */,
+			);
+			name = DetailsController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +280,7 @@
 				2A86BE42158AC51B009EFFC9 /* MainStoryboard.storyboard in Resources */,
 				2A837951158BE0CD00F7BF66 /* event.png in Resources */,
 				2A837955158BE33200F7BF66 /* profile-avatar.gif in Resources */,
+				2AF44E55158C105300DEBE0B /* DetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +319,7 @@
 				2A86BE3F158AC51B009EFFC9 /* AppDelegate.m in Sources */,
 				2A86BE45158AC51B009EFFC9 /* ViewController.m in Sources */,
 				2A86BE68158ACED2009EFFC9 /* MyAnnotation.m in Sources */,
+				2AF44E54158C105300DEBE0B /* DetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

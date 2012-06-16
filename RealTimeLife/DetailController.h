@@ -10,4 +10,6 @@
 
 @interface DetailController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *detailView;
+
 @end
