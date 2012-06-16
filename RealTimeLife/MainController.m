@@ -1,18 +1,18 @@
 //
-//  RootViewController.m
+//  MainController.m
 //  RealTimeLife
 //
 //  Created by Ádamo Morone on 15/06/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "MainController.h"
 
-@interface RootViewController ()
+@interface MainController ()
 
 @end
 
-@implementation RootViewController
+@implementation MainController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

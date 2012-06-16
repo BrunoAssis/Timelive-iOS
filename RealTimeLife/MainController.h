@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  MainController.h
 //  RealTimeLife
 //
 //  Created by Ádamo Morone on 15/06/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController
+@interface MainController : UIViewController
 
 @end
