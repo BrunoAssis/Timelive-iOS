@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A24F87B158D8627009B1475 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F87A158D8627009B1475 /* UIKit.framework */; };
+		2A24F87D158D8627009B1475 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F87C158D8627009B1475 /* Foundation.framework */; };
+		2A24F87F158D8627009B1475 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F87E158D8627009B1475 /* CoreGraphics.framework */; };
+		2A24F885158D8627009B1475 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F883158D8627009B1475 /* InfoPlist.strings */; };
+		2A24F887158D8627009B1475 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F886158D8627009B1475 /* main.m */; };
+		2A24F88B158D8627009B1475 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F88A158D8627009B1475 /* AppDelegate.m */; };
+		2A24F88E158D8627009B1475 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F88C158D8627009B1475 /* MainStoryboard.storyboard */; };
+		2A24F8A5158D86D7009B1475 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F8A4158D86D7009B1475 /* MapViewController.m */; };
+		2A24F8A9158D87C5009B1475 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F8A8158D87C5009B1475 /* Annotation.m */; };
+		2A24F8AB158D8835009B1475 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F8AA158D8835009B1475 /* MapKit.framework */; };
+		2A24F8B0158D893C009B1475 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F8AE158D893C009B1475 /* event.png */; };
+		2A24F8B1158D893C009B1475 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F8AF158D893C009B1475 /* profile.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A24F876158D8627009B1475 /* Real Time Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real Time Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A24F87A158D8627009B1475 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2A24F87C158D8627009B1475 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2A24F87E158D8627009B1475 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2A24F882158D8627009B1475 /* Real Time Life-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Real Time Life-Info.plist"; sourceTree = "<group>"; };
+		2A24F884158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A24F886158D8627009B1475 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A24F888158D8627009B1475 /* Real Time Life-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Real Time Life-Prefix.pch"; sourceTree = "<group>"; };
+		2A24F889158D8627009B1475 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2A24F88A158D8627009B1475 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2A24F88D158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2A24F8A3158D86D7009B1475 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = controller/MapViewController.h; sourceTree = "<group>"; };
+		2A24F8A4158D86D7009B1475 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = controller/MapViewController.m; sourceTree = "<group>"; };
+		2A24F8A7158D87C5009B1475 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Annotation.h; path = classes/Annotation.h; sourceTree = "<group>"; };
+		2A24F8A8158D87C5009B1475 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Annotation.m; path = classes/Annotation.m; sourceTree = "<group>"; };
+		2A24F8AA158D8835009B1475 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2A24F8AE158D893C009B1475 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.png; path = resources/img/event.png; sourceTree = "<group>"; };
+		2A24F8AF158D893C009B1475 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = resources/img/profile.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A24F873158D8627009B1475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A24F8AB158D8835009B1475 /* MapKit.framework in Frameworks */,
+				2A24F87B158D8627009B1475 /* UIKit.framework in Frameworks */,
+				2A24F87D158D8627009B1475 /* Foundation.framework in Frameworks */,
+				2A24F87F158D8627009B1475 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A24F86B158D8627009B1475 = {
+			isa = PBXGroup;
+			children = (
+				2A24F8AA158D8835009B1475 /* MapKit.framework */,
+				2A24F880158D8627009B1475 /* Real Time Life */,
+				2A24F879158D8627009B1475 /* Frameworks */,
+				2A24F877158D8627009B1475 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A24F877158D8627009B1475 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F876158D8627009B1475 /* Real Time Life.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A24F879158D8627009B1475 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F87A158D8627009B1475 /* UIKit.framework */,
+				2A24F87C158D8627009B1475 /* Foundation.framework */,
+				2A24F87E158D8627009B1475 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A24F880158D8627009B1475 /* Real Time Life */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F8AC158D8858009B1475 /* Resources */,
+				2A24F8A6158D87AE009B1475 /* classes */,
+				2A24F8A2158D8692009B1475 /* controller */,
+				2A24F889158D8627009B1475 /* AppDelegate.h */,
+				2A24F88A158D8627009B1475 /* AppDelegate.m */,
+				2A24F881158D8627009B1475 /* Supporting Files */,
+			);
+			path = "Real Time Life";
+			sourceTree = "<group>";
+		};
+		2A24F881158D8627009B1475 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F882158D8627009B1475 /* Real Time Life-Info.plist */,
+				2A24F883158D8627009B1475 /* InfoPlist.strings */,
+				2A24F886158D8627009B1475 /* main.m */,
+				2A24F888158D8627009B1475 /* Real Time Life-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A24F8A2158D8692009B1475 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F8A3158D86D7009B1475 /* MapViewController.h */,
+				2A24F8A4158D86D7009B1475 /* MapViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		2A24F8A6158D87AE009B1475 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F8A7158D87C5009B1475 /* Annotation.h */,
+				2A24F8A8158D87C5009B1475 /* Annotation.m */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		2A24F8AC158D8858009B1475 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F8AD158D886F009B1475 /* img */,
+				2A24F88C158D8627009B1475 /* MainStoryboard.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A24F8AD158D886F009B1475 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				2A24F8AE158D893C009B1475 /* event.png */,
+				2A24F8AF158D893C009B1475 /* profile.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A24F875158D8627009B1475 /* Real Time Life */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A24F89F158D8627009B1475 /* Build configuration list for PBXNativeTarget "Real Time Life" */;
+			buildPhases = (
+				2A24F872158D8627009B1475 /* Sources */,
+				2A24F873158D8627009B1475 /* Frameworks */,
+				2A24F874158D8627009B1475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Real Time Life";
+			productName = "Real Time Life";
+			productReference = 2A24F876158D8627009B1475 /* Real Time Life.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A24F86D158D8627009B1475 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2A24F870158D8627009B1475 /* Build configuration list for PBXProject "Real Time Life" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A24F86B158D8627009B1475;
+			productRefGroup = 2A24F877158D8627009B1475 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A24F875158D8627009B1475 /* Real Time Life */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A24F874158D8627009B1475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A24F885158D8627009B1475 /* InfoPlist.strings in Resources */,
+				2A24F88E158D8627009B1475 /* MainStoryboard.storyboard in Resources */,
+				2A24F8B0158D893C009B1475 /* event.png in Resources */,
+				2A24F8B1158D893C009B1475 /* profile.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A24F872158D8627009B1475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A24F887158D8627009B1475 /* main.m in Sources */,
+				2A24F88B158D8627009B1475 /* AppDelegate.m in Sources */,
+				2A24F8A5158D86D7009B1475 /* MapViewController.m in Sources */,
+				2A24F8A9158D87C5009B1475 /* Annotation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2A24F883158D8627009B1475 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A24F884158D8627009B1475 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2A24F88C158D8627009B1475 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A24F88D158D8627009B1475 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A24F89D158D8627009B1475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2A24F89E158D8627009B1475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A24F8A0158D8627009B1475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Real Time Life/Real Time Life-Prefix.pch";
+				INFOPLIST_FILE = "Real Time Life/Real Time Life-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2A24F8A1158D8627009B1475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Real Time Life/Real Time Life-Prefix.pch";
+				INFOPLIST_FILE = "Real Time Life/Real Time Life-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A24F870158D8627009B1475 /* Build configuration list for PBXProject "Real Time Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A24F89D158D8627009B1475 /* Debug */,
+				2A24F89E158D8627009B1475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A24F89F158D8627009B1475 /* Build configuration list for PBXNativeTarget "Real Time Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A24F8A0158D8627009B1475 /* Debug */,
+				2A24F8A1158D8627009B1475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A24F86D158D8627009B1475 /* Project object */;
+}
