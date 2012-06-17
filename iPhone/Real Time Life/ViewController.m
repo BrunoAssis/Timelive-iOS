@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "DetailEventViewController.h"
 #import "MapViewController.h"
 
 
@@ -29,7 +29,7 @@
     
     MapViewController *mapView = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
     self.mapViewController = mapView;
-    [self.view addSubview:mapViewController.view];
+    [self.view addSubview:self.mapViewController.view];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }

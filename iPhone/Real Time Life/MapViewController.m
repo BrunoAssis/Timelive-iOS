@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "DetailEventViewController.h"
 #import "Annotation.h"
 
 
@@ -16,7 +17,9 @@
 @end
 
 @implementation MapViewController
+
 @synthesize mapView;
+@synthesize detailEvent;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -189,7 +192,16 @@
 //Método que é executado quando clicamos no botão de mais informações: O azul do pin.
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"calloutAccessoryControlTapped: %@",view.annotation);
+    //NSLog(@"calloutAccessoryControlTapped: %@",view.annotation);
+    DetailEventViewController *detailView = [[DetailEventViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+    //self.detailView = detailView;
+    //[self.view addSubview:self.detailView.view];
+    self.detailEvent = detailView;
+    //self.removeFromSuperview;
+    [self.view addSubview:self.detailEvent.view];
+    
+    
+    
     
 }
 

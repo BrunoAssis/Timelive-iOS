@@ -12,8 +12,15 @@
 //Define uma constante gringa para metros por milha.
 #define METERS_PER_MILE 1609.344
 
-@interface MapViewController : UIViewController
+
+@class DetailEventViewController;
+
+@interface MapViewController : UIViewController{
+    
+    DetailEventViewController *detailEvent;
+}
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) DetailEventViewController *detailEvent;
 
 
 
