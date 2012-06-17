@@ -19,6 +19,7 @@
 		2A24F8AB158D8835009B1475 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F8AA158D8835009B1475 /* MapKit.framework */; };
 		2A24F8B0158D893C009B1475 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F8AE158D893C009B1475 /* event.png */; };
 		2A24F8B1158D893C009B1475 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F8AF158D893C009B1475 /* profile.png */; };
+		2A24F8B4158D8FB4009B1475 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F8B3158D8FB4009B1475 /* EventDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		2A24F8AA158D8835009B1475 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2A24F8AE158D893C009B1475 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.png; path = resources/img/event.png; sourceTree = "<group>"; };
 		2A24F8AF158D893C009B1475 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = resources/img/profile.png; sourceTree = "<group>"; };
+		2A24F8B2158D8FB4009B1475 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = controller/EventDetailViewController.h; sourceTree = "<group>"; };
+		2A24F8B3158D8FB4009B1475 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = controller/EventDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		2A24F8A2158D8692009B1475 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				2A24F8B2158D8FB4009B1475 /* EventDetailViewController.h */,
+				2A24F8B3158D8FB4009B1475 /* EventDetailViewController.m */,
 				2A24F8A3158D86D7009B1475 /* MapViewController.h */,
 				2A24F8A4158D86D7009B1475 /* MapViewController.m */,
 			);
@@ -213,6 +218,7 @@
 				2A24F88B158D8627009B1475 /* AppDelegate.m in Sources */,
 				2A24F8A5158D86D7009B1475 /* MapViewController.m in Sources */,
 				2A24F8A9158D87C5009B1475 /* Annotation.m in Sources */,
+				2A24F8B4158D8FB4009B1475 /* EventDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
