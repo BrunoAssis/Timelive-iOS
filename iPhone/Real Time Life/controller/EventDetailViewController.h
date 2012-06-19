@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventDetailViewController : UIViewController
+@interface EventDetailViewController : UIViewController{
+    
+}
 
 @end

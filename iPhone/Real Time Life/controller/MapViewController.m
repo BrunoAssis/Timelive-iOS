@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "Annotation.h"
+#import "EventDetailViewController.h"
 
 @interface MapViewController ()
 
@@ -15,6 +16,7 @@
 
 @implementation MapViewController
 @synthesize mapView;
+@synthesize eventDetail;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -155,9 +157,8 @@
     
     //Cria o RightButton
 	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [rightButton addTarget:self
-					action:@selector(showDetails:)
-		  forControlEvents:UIControlEventTouchUpInside];
+    [rightButton setTitle:annotation.title forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
 	pinView.rightCalloutAccessoryView = rightButton;
     
     
@@ -188,10 +189,11 @@
 
 
 -(IBAction)showDetails:(id)sender{
-    
-	NSLog(@"Annotation Click");
-	//self.detailEvent.title=((UIButton*)sender).currentTitle;
-	//[self.navigationController pushViewController:self.detailEvent animated:YES];
+
+    //NSLog([NSString stringWithFormat:@"%d", self.eventDetail.title]);
+	self.eventDetail.title=((UIButton*)sender).currentTitle;
+    [self performSegueWithIdentifier: @"eventDetailSegue" sender: self];
+
 }
 
 

@@ -9,11 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+#import "EventDetailViewController.h"
+
 //Define uma constante gringa para metros por milha.
 #define METERS_PER_MILE 1609.344
 
+@class EventDetailViewController;
 
-@interface MapViewController : UIViewController
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@interface MapViewController : UIViewController{
+    
+    IBOutlet EventDetailViewController *eventDetail;
+    IBOutlet MKMapView *mapView;
+
+}
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) EventDetailViewController *eventDetail;
 
 @end
