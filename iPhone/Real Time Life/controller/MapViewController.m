@@ -189,9 +189,14 @@
 
 
 -(IBAction)showDetails:(id)sender{
-
+    
+    //Função que seta (hipoteticamente) o id do botão que está sendo clicado,
+    //para que a janela MODAL saiba quem que chamou a ação.
     //NSLog([NSString stringWithFormat:@"%d", self.eventDetail.title]);
 	self.eventDetail.title=((UIButton*)sender).currentTitle;
+    
+    //Executa o SEGUE (lê-se SEG-WAY) que foi determinado para abrir a janela
+    //de detalhes do evento em modo MODAL.
     [self performSegueWithIdentifier: @"eventDetailSegue" sender: self];
 
 }

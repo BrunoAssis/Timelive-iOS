@@ -13,29 +13,30 @@
 @end
 
 @implementation EventDetailViewController
+@synthesize done;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-	// Do any additional setup after loading the view.
     
+    //Ao carregar a tela, aponta a função BackToMap para o botão.
+    [self.done setAction:@selector(BackToMap:)];
     
 }
 
 - (void)viewDidUnload
 {
+    [self setDone:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    // Release any retained subviews of the main view.]
+}
+
+
+//Ações que são executadas ao clicar no DONE
+-(IBAction)BackToMap:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

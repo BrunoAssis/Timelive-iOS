@@ -12,4 +12,6 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
+
 @end
