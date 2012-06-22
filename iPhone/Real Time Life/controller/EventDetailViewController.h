@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Annotation.h"
 
-@interface EventDetailViewController : UIViewController{
-    
+@interface EventDetailViewController : UIViewController
+{
+    Annotation* event;
 }
+
+@property (nonatomic) Annotation* event;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
 
