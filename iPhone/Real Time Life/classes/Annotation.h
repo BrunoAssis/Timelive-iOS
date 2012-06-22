@@ -11,10 +11,6 @@
 
 @interface Annotation : NSObject <MKAnnotation>{
     
-    CLLocationCoordinate2D coordinate;
-    NSInteger idUser;
-    NSString* title;
-    NSString* subtitle;
     CLLocationCoordinate2D  coordinate;
     NSInteger               idUser; //New Attribute
     NSString*               title;
