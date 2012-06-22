@@ -12,6 +12,8 @@
 
 
 @implementation EventDetailViewController
+@synthesize lblUsername;
+@synthesize lblMessage;
 
 
 @synthesize done, event;
@@ -24,13 +26,16 @@
     //Ao carregar a tela, aponta a função BackToMap para o botão.
     [self.done setAction:@selector(BackToMap:)];
     
-    NSLog(@"%@", event.subtitle);
+    self.lblMessage.text = event.title;
+    self.lblUsername.text = event.subtitle;
     
 }
 
 - (void)viewDidUnload
 {
     [self setDone:nil];
+    [self setLblUsername:nil];
+    [self setLblMessage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.]
 }

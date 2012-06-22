@@ -27,10 +27,10 @@
 		2A24F87A158D8627009B1475 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A24F87C158D8627009B1475 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A24F87E158D8627009B1475 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2A24F882158D8627009B1475 /* Timelive-Info.plist */ = {isa = PBXFileReference; path = "Timelive-Info.plist"; sourceTree = "<group>"; };
+		2A24F882158D8627009B1475 /* Timelive-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Timelive-Info.plist"; sourceTree = "<group>"; };
 		2A24F884158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A24F886158D8627009B1475 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A24F888158D8627009B1475 /* Timelive-Prefix.pch */ = {isa = PBXFileReference; path = "Timelive-Prefix.pch"; sourceTree = "<group>"; };
+		2A24F888158D8627009B1475 /* Timelive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timelive-Prefix.pch"; sourceTree = "<group>"; };
 		2A24F889158D8627009B1475 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2A24F88A158D8627009B1475 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2A24F88D158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };

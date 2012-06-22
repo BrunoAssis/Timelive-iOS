@@ -26,6 +26,6 @@
 }
 @property (nonatomic, retain) IBOutlet MKMapView            *mapView;
 @property (nonatomic, retain) EventDetailViewController     *eventDetail;
-@property (nonatomic) NSMutableArray                        *annotationArray; //TODO: Modificar para Array
+@property (nonatomic, retain) NSMutableArray                *annotationArray; //TODO: Modificar para Array
 
 @end

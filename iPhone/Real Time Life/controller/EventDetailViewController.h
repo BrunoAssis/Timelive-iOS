@@ -17,5 +17,7 @@
 @property (nonatomic) Annotation* event;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UILabel *lblMessage;
 
 @end

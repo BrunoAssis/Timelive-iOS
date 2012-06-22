@@ -13,14 +13,14 @@
 
 @synthesize coordinate;
 @synthesize title;
-@synthesize subtitle;
+@synthesize username;
 @synthesize idUser;
 
 - (void) dealloc
 {
     //[super dealloc];
     self.title = nil;
-    self.subtitle = nil;
+    self.username = nil;
     self.idUser = 0;
 }
 
