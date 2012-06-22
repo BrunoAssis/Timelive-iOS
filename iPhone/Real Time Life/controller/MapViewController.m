@@ -15,8 +15,10 @@
 @end
 
 @implementation MapViewController
+
 @synthesize mapView;
 @synthesize eventDetail;
+@synthesize annotationArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +38,9 @@
     //##############################################
     //TUDO ABAIXO DEVE SER SUBSTITUÍDO POR UMA CLASSE COM REQUISIÇÃO
     //AO BANCO DE DADOS ETC.   
+    
+    
+    self.annotationArray = [[NSMutableArray alloc] init];
     
     //Seta 4 coordenadas para colocar os pins,
 	CLLocationCoordinate2D theCoordinate1;
@@ -60,38 +65,48 @@
 	
 	myAnnotation1.coordinate=theCoordinate1;
 	myAnnotation1.title=@"É foda, truta!";
-	myAnnotation1.subtitle=@"Mauricio Vaglio.";
-    myAnnotation1.idUser = 1;
+	myAnnotation1.subtitle=@"MVaglio.";
+    myAnnotation1.idUser=1;
+
 	
 	Annotation* myAnnotation2=[[Annotation alloc] init];
 	
 	myAnnotation2.coordinate=theCoordinate2;
 	myAnnotation2.title=@"Acho certo sorvete com bacon!";
-	myAnnotation2.subtitle=@"Bruno Assis";
-    myAnnotation1.idUser = 2;
-	
+	myAnnotation2.subtitle=@"BrunoAssis";
+    myAnnotation2.idUser=2;
+
 	Annotation* myAnnotation3=[[Annotation alloc] init];
 	
 	myAnnotation3.coordinate=theCoordinate3;
 	myAnnotation3.title=@"Vai tomar no cú, fdp!";
-	myAnnotation3.subtitle=@"Ádamo Morone";
-    myAnnotation1.idUser = 3;
+	myAnnotation3.subtitle=@"Morone";
+    myAnnotation3.idUser=3;
+
 	
 	Annotation* myAnnotation4=[[Annotation alloc] init];
 	
+    myAnnotation4 = [[Annotation alloc] init];
 	myAnnotation4.coordinate=theCoordinate4;
 	myAnnotation4.title=@"Viv le Zé";
-	myAnnotation4.subtitle=@"Mauricio Vaglio";
-    myAnnotation1.idUser = 1;
-	
+	myAnnotation4.subtitle=@"MVaglio";
+    myAnnotation4.idUser=1;
+
+    
+    [self.annotationArray addObject:myAnnotation1];
+	[self.annotationArray addObject:myAnnotation2];
+	[self.annotationArray addObject:myAnnotation3];
+	[self.annotationArray addObject:myAnnotation4];
     
     
     //Adiciona os annotation no mapa
-	[mapView addAnnotation:myAnnotation1];
-	[mapView addAnnotation:myAnnotation2];
-	[mapView addAnnotation:myAnnotation3];
-	[mapView addAnnotation:myAnnotation4];
-    //##############################################
+    for (id <MKAnnotation> annotation in self.annotationArray) {
+        [mapView addAnnotation:annotation]; 
+    }
+    
+    UIBarButtonItem* temp=[[UIBarButtonItem alloc] init];
+	temp.title=@"Back";
+	self.navigationItem.backBarButtonItem=temp;
 }
 
 
@@ -127,16 +142,15 @@
 
 
 //Método que lê todos os Annotations que foram associados ao mapa.
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)ann
 {
     
 	// Se for a locação do usuário retorna nulo e não troca nada.
-    if ([annotation isKindOfClass:[MKUserLocation class]])
+    if ([ann isKindOfClass:[MKUserLocation class]])
         return nil;
 	
 	static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
-    
-    MKAnnotationView* pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+    MKAnnotationView* pinView = [[MKAnnotationView alloc] initWithAnnotation:ann reuseIdentifier:AnnotationIdentifier];
     
     //Seta se vc quer que o pino caia com animação.
     //Esta propriedade não existe para MKAnnotationView. Funciona apenas para MKPinAnnotationView.
@@ -157,14 +171,15 @@
     
     //Cria o RightButton
 	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [rightButton setTitle:annotation.title forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //[rightButton addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
+    
 	pinView.rightCalloutAccessoryView = rightButton;
     
     
     //Joga o RightButton para a direita da caixinha do PinView
 	pinView.rightCalloutAccessoryView = rightButton;
-    
     
     
     /*
@@ -188,17 +203,19 @@
 }
 
 
--(IBAction)showDetails:(id)sender{
-    
-    //Função que seta (hipoteticamente) o id do botão que está sendo clicado,
     //para que a janela MODAL saiba quem que chamou a ação.
-    //NSLog([NSString stringWithFormat:@"%d", self.eventDetail.title]);
-	self.eventDetail.title=((UIButton*)sender).currentTitle;
     
-    //Executa o SEGUE (lê-se SEG-WAY) que foi determinado para abrir a janela
-    //de detalhes do evento em modo MODAL.
     [self performSegueWithIdentifier: @"eventDetailSegue" sender: self];
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier: @"eventDetailSegue" sender: view.annotation];
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+        EventDetailViewController *vc = [segue destinationViewController];
+        Annotation *view = (Annotation *) sender;
+        vc.event = view;
 }
 
 
