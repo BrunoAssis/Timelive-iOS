@@ -23,14 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A24F876158D8627009B1475 /* Real Time Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real Time Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A24F876158D8627009B1475 /* Timelive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timelive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A24F87A158D8627009B1475 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A24F87C158D8627009B1475 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A24F87E158D8627009B1475 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2A24F882158D8627009B1475 /* Real Time Life-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Real Time Life-Info.plist"; sourceTree = "<group>"; };
+		2A24F882158D8627009B1475 /* Timelive-Info.plist */ = {isa = PBXFileReference; path = "Timelive-Info.plist"; sourceTree = "<group>"; };
 		2A24F884158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A24F886158D8627009B1475 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A24F888158D8627009B1475 /* Real Time Life-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Real Time Life-Prefix.pch"; sourceTree = "<group>"; };
+		2A24F888158D8627009B1475 /* Timelive-Prefix.pch */ = {isa = PBXFileReference; path = "Timelive-Prefix.pch"; sourceTree = "<group>"; };
 		2A24F889158D8627009B1475 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2A24F88A158D8627009B1475 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2A24F88D158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		2A24F877158D8627009B1475 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A24F876158D8627009B1475 /* Real Time Life.app */,
+				2A24F876158D8627009B1475 /* Timelive.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,10 +104,10 @@
 		2A24F881158D8627009B1475 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A24F882158D8627009B1475 /* Real Time Life-Info.plist */,
+				2A24F882158D8627009B1475 /* Timelive-Info.plist */,
 				2A24F883158D8627009B1475 /* InfoPlist.strings */,
 				2A24F886158D8627009B1475 /* main.m */,
-				2A24F888158D8627009B1475 /* Real Time Life-Prefix.pch */,
+				2A24F888158D8627009B1475 /* Timelive-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,9 +153,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A24F875158D8627009B1475 /* Real Time Life */ = {
+		2A24F875158D8627009B1475 /* Timelive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A24F89F158D8627009B1475 /* Build configuration list for PBXNativeTarget "Real Time Life" */;
+			buildConfigurationList = 2A24F89F158D8627009B1475 /* Build configuration list for PBXNativeTarget "Timelive" */;
 			buildPhases = (
 				2A24F872158D8627009B1475 /* Sources */,
 				2A24F873158D8627009B1475 /* Frameworks */,
@@ -165,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = "Real Time Life";
+			name = Timelive;
 			productName = "Real Time Life";
-			productReference = 2A24F876158D8627009B1475 /* Real Time Life.app */;
+			productReference = 2A24F876158D8627009B1475 /* Timelive.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +178,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = 2A24F870158D8627009B1475 /* Build configuration list for PBXProject "Real Time Life" */;
+			buildConfigurationList = 2A24F870158D8627009B1475 /* Build configuration list for PBXProject "Timelive" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -190,7 +190,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A24F875158D8627009B1475 /* Real Time Life */,
+				2A24F875158D8627009B1475 /* Timelive */,
 			);
 		};
 /* End PBXProject section */
@@ -293,9 +293,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Real Time Life/Real Time Life-Prefix.pch";
-				INFOPLIST_FILE = "Real Time Life/Real Time Life-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Real Time Life/Timelive-Prefix.pch";
+				INFOPLIST_FILE = "Real Time Life/Timelive-Info.plist";
+				PRODUCT_NAME = Timelive;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -304,9 +304,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Real Time Life/Real Time Life-Prefix.pch";
-				INFOPLIST_FILE = "Real Time Life/Real Time Life-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Real Time Life/Timelive-Prefix.pch";
+				INFOPLIST_FILE = "Real Time Life/Timelive-Info.plist";
+				PRODUCT_NAME = Timelive;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -314,7 +314,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A24F870158D8627009B1475 /* Build configuration list for PBXProject "Real Time Life" */ = {
+		2A24F870158D8627009B1475 /* Build configuration list for PBXProject "Timelive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A24F89D158D8627009B1475 /* Debug */,
@@ -323,7 +323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A24F89F158D8627009B1475 /* Build configuration list for PBXNativeTarget "Real Time Life" */ = {
+		2A24F89F158D8627009B1475 /* Build configuration list for PBXNativeTarget "Timelive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A24F8A0158D8627009B1475 /* Debug */,
