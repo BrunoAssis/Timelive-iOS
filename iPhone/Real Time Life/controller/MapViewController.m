@@ -172,6 +172,7 @@
     //Cria o RightButton
 	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
+    //[rightButton setTag:ann.idUser forState:UIControlStateNormal];
     
     //[rightButton addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -203,14 +204,13 @@
 }
 
 
-    //para que a janela MODAL saiba quem que chamou a ação.
-    
-    [self performSegueWithIdentifier: @"eventDetailSegue" sender: self];
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     [self performSegueWithIdentifier: @"eventDetailSegue" sender: view.annotation];
+}
 
 
+//Método chamado antes de rodar o SEGUE
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
         EventDetailViewController *vc = [segue destinationViewController];
