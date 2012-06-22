@@ -14,9 +14,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A24F875158D8627009B1475"
-               BuildableName = "Real Time Life.app"
-               BlueprintName = "Real Time Life"
-               ReferencedContainer = "container:Real Time Life.xcodeproj">
+               BuildableName = "Timelive.app"
+               BlueprintName = "Timelive"
+               ReferencedContainer = "container:Timelive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,9 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A24F875158D8627009B1475"
-            BuildableName = "Real Time Life.app"
-            BlueprintName = "Real Time Life"
-            ReferencedContainer = "container:Real Time Life.xcodeproj">
+            BuildableName = "Timelive.app"
+            BlueprintName = "Timelive"
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A24F875158D8627009B1475"
-            BuildableName = "Real Time Life.app"
-            BlueprintName = "Real Time Life"
-            ReferencedContainer = "container:Real Time Life.xcodeproj">
+            BuildableName = "Timelive.app"
+            BlueprintName = "Timelive"
+            ReferencedContainer = "container:Timelive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A24F875158D8627009B1475"
-            BuildableName = "Real Time Life.app"
-            BlueprintName = "Real Time Life"
-            ReferencedContainer = "container:Real Time Life.xcodeproj">
+            BuildableName = "Timelive.app"
+            BlueprintName = "Timelive"
+            ReferencedContainer = "container:Timelive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
