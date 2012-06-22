@@ -7,13 +7,14 @@
 //
 
 #import "EventDetailViewController.h"
+#import "Annotation.h"
 
-@interface EventDetailViewController ()
 
-@end
 
 @implementation EventDetailViewController
-@synthesize done;
+
+
+@synthesize done, event;
 
 
 - (void)viewDidLoad
@@ -22,6 +23,8 @@
     
     //Ao carregar a tela, aponta a função BackToMap para o botão.
     [self.done setAction:@selector(BackToMap:)];
+    
+    NSLog(@"%@", event.subtitle);
     
 }
 
@@ -39,9 +42,7 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end
