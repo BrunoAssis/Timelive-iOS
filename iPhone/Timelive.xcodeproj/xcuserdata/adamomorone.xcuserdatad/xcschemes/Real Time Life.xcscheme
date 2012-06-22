@@ -34,6 +34,7 @@
             BlueprintIdentifier = "2A24F875158D8627009B1475"
             BuildableName = "Timelive.app"
             BlueprintName = "Timelive"
+            ReferencedContainer = "container:Timelive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
