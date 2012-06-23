@@ -14,12 +14,12 @@
     CLLocationCoordinate2D  coordinate;
     NSInteger               idUser; //New Attribute
     NSString*               title;
-    NSString*               username;
+    NSString*               subtitle;
 }
 
 @property (nonatomic, assign)   CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy)     NSString* title;
-@property (nonatomic, copy)     NSString* username;
+@property (nonatomic, copy)     NSString* subtitle;
 @property (nonatomic, assign)   NSInteger idUser;
 
 @end

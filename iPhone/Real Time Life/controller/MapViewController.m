@@ -65,7 +65,7 @@
 	
 	myAnnotation1.coordinate=theCoordinate1;
 	myAnnotation1.title=@"É foda, truta!";
-	myAnnotation1.username=@"MVaglio";
+	myAnnotation1.subtitle=@"MVaglio.";
     myAnnotation1.idUser=1;
 
 	
@@ -73,14 +73,14 @@
 	
 	myAnnotation2.coordinate=theCoordinate2;
 	myAnnotation2.title=@"Acho certo sorvete com bacon!";
-	myAnnotation2.username=@"BrunoAssis";
+	myAnnotation2.subtitle=@"BrunoAssis";
     myAnnotation2.idUser=2;
 
 	Annotation* myAnnotation3=[[Annotation alloc] init];
 	
 	myAnnotation3.coordinate=theCoordinate3;
 	myAnnotation3.title=@"Vai tomar no cú, fdp!";
-	myAnnotation3.username=@"Morone";
+	myAnnotation3.subtitle=@"Morone";
     myAnnotation3.idUser=3;
 
 	
@@ -89,7 +89,7 @@
     myAnnotation4 = [[Annotation alloc] init];
 	myAnnotation4.coordinate=theCoordinate4;
 	myAnnotation4.title=@"Viv le Zé";
-	myAnnotation4.username=@"MVaglio";
+	myAnnotation4.subtitle=@"MVaglio";
     myAnnotation4.idUser=1;
 
     
