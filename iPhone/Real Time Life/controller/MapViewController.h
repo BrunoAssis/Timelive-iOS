@@ -24,6 +24,7 @@
     NSMutableArray                      *eventArray;
 
 }
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *checkIn;
 @property (nonatomic, retain) IBOutlet MKMapView            *mapView;
 @property (nonatomic, retain) EventDetailViewController     *eventDetail;
 @property (nonatomic, retain) NSMutableArray                *eventArray; //TODO: Modificar para Array

@@ -26,6 +26,7 @@
 		2ACD3DCD15993E56004EAE8F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC515993E56004EAE8F /* SBJsonBase.m */; };
 		2ACD3DCE15993E56004EAE8F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC715993E56004EAE8F /* SBJsonParser.m */; };
 		2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */; };
+		2ACD3DD2159949FB004EAE8F /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,7 @@
 		2A24F88D158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2A24F8A3158D86D7009B1475 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = controller/MapViewController.h; sourceTree = "<group>"; };
 		2A24F8A4158D86D7009B1475 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = controller/MapViewController.m; sourceTree = "<group>"; };
-		2A24F8A7158D87C5009B1475 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; name = Event.h; path = classes/Event.h; sourceTree = "<group>"; };
+		2A24F8A7158D87C5009B1475 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = classes/Event.h; sourceTree = "<group>"; };
 		2A24F8A8158D87C5009B1475 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = classes/Event.m; sourceTree = "<group>"; };
 		2A24F8AA158D8835009B1475 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2A24F8AE158D893C009B1475 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.png; path = resources/img/event.png; sourceTree = "<group>"; };
@@ -62,6 +63,8 @@
 		2ACD3DC715993E56004EAE8F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		2ACD3DC815993E56004EAE8F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		2ACD3DD0159949FB004EAE8F /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInViewController.h; path = controller/CheckInViewController.h; sourceTree = "<group>"; };
+		2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewController.m; path = controller/CheckInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 				2A24F8A4158D86D7009B1475 /* MapViewController.m */,
 				2A83C51C158E1D14007FDF7B /* EventDetailViewController.h */,
 				2A83C51D158E1D14007FDF7B /* EventDetailViewController.m */,
+				2ACD3DD0159949FB004EAE8F /* CheckInViewController.h */,
+				2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				2ACD3DCD15993E56004EAE8F /* SBJsonBase.m in Sources */,
 				2ACD3DCE15993E56004EAE8F /* SBJsonParser.m in Sources */,
 				2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */,
+				2ACD3DD2159949FB004EAE8F /* CheckInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
