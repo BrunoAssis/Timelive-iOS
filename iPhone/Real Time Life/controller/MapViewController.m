@@ -18,6 +18,7 @@
 
 @implementation MapViewController
 
+@synthesize checkIn;
 @synthesize mapView;
 @synthesize eventDetail;
 @synthesize eventArray;
@@ -34,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.checkIn setAction:@selector(CheckIn:)];
+    
 	//Seta o delegate do mapView para a classe.
     mapView.delegate=(id)self;
     
@@ -189,18 +193,29 @@
 }
 
 
-//Método chamado antes de rodar o SEGUE
+//Método chamado antes de rodar todos os SEGUE
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier] isEqualToString:@"eventDetailSegue"]) {
         EventDetailViewController *vc = [segue destinationViewController];
         Event *view = (Event *) sender;
         vc.event = view;
+    }
 }
+
+
+-(IBAction)CheckIn:(id)sender
+{
+    [self performSegueWithIdentifier: @"checkInSegue" sender: sender];
+}
+
+
 
 
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    [self setCheckIn:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

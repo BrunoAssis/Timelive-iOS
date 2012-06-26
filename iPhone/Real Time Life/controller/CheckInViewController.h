@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckInViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancel;
 
 @end

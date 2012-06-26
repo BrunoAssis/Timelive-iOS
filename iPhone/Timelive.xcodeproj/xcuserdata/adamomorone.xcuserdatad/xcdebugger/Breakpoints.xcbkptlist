@@ -8,12 +8,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Real Time Life/controller/MapViewController.m"
-         timestampString = "362367080.207084"
+         timestampString = "362368449.468424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "196"
-         endingLineNumber = "196"
+         startingLineNumber = "201"
+         endingLineNumber = "201"
          landmarkName = "-prepareForSegue:sender:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Real Time Life/controller/MapViewController.m"
+         timestampString = "362368449.468424"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
+         landmarkName = "-CheckIn:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
