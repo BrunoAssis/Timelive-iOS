@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface Annotation : NSObject <MKAnnotation>{
+@interface Event : NSObject <MKAnnotation>{
     
     CLLocationCoordinate2D  coordinate;
     NSInteger               idUser; //New Attribute

@@ -15,11 +15,17 @@
 		2A24F88B158D8627009B1475 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F88A158D8627009B1475 /* AppDelegate.m */; };
 		2A24F88E158D8627009B1475 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F88C158D8627009B1475 /* MainStoryboard.storyboard */; };
 		2A24F8A5158D86D7009B1475 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F8A4158D86D7009B1475 /* MapViewController.m */; };
-		2A24F8A9158D87C5009B1475 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F8A8158D87C5009B1475 /* Annotation.m */; };
+		2A24F8A9158D87C5009B1475 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24F8A8158D87C5009B1475 /* Event.m */; };
 		2A24F8AB158D8835009B1475 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F8AA158D8835009B1475 /* MapKit.framework */; };
 		2A24F8B0158D893C009B1475 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F8AE158D893C009B1475 /* event.png */; };
 		2A24F8B1158D893C009B1475 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A24F8AF158D893C009B1475 /* profile.png */; };
 		2A83C51E158E1D14007FDF7B /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C51D158E1D14007FDF7B /* EventDetailViewController.m */; };
+		2ACD3DCA15993E56004EAE8F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DBF15993E56004EAE8F /* NSObject+SBJSON.m */; };
+		2ACD3DCB15993E56004EAE8F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC115993E56004EAE8F /* NSString+SBJSON.m */; };
+		2ACD3DCC15993E56004EAE8F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC315993E56004EAE8F /* SBJSON.m */; };
+		2ACD3DCD15993E56004EAE8F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC515993E56004EAE8F /* SBJsonBase.m */; };
+		2ACD3DCE15993E56004EAE8F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC715993E56004EAE8F /* SBJsonParser.m */; };
+		2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +42,26 @@
 		2A24F88D158D8627009B1475 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2A24F8A3158D86D7009B1475 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = controller/MapViewController.h; sourceTree = "<group>"; };
 		2A24F8A4158D86D7009B1475 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = controller/MapViewController.m; sourceTree = "<group>"; };
-		2A24F8A7158D87C5009B1475 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Annotation.h; path = classes/Annotation.h; sourceTree = "<group>"; };
-		2A24F8A8158D87C5009B1475 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Annotation.m; path = classes/Annotation.m; sourceTree = "<group>"; };
+		2A24F8A7158D87C5009B1475 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; name = Event.h; path = classes/Event.h; sourceTree = "<group>"; };
+		2A24F8A8158D87C5009B1475 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = classes/Event.m; sourceTree = "<group>"; };
 		2A24F8AA158D8835009B1475 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2A24F8AE158D893C009B1475 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.png; path = resources/img/event.png; sourceTree = "<group>"; };
 		2A24F8AF158D893C009B1475 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = resources/img/profile.png; sourceTree = "<group>"; };
 		2A83C51C158E1D14007FDF7B /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = controller/EventDetailViewController.h; sourceTree = "<group>"; };
 		2A83C51D158E1D14007FDF7B /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = controller/EventDetailViewController.m; sourceTree = "<group>"; };
+		2ACD3DBD15993E56004EAE8F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		2ACD3DBE15993E56004EAE8F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		2ACD3DBF15993E56004EAE8F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		2ACD3DC015993E56004EAE8F /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		2ACD3DC115993E56004EAE8F /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		2ACD3DC215993E56004EAE8F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		2ACD3DC315993E56004EAE8F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		2ACD3DC415993E56004EAE8F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		2ACD3DC515993E56004EAE8F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		2ACD3DC615993E56004EAE8F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		2ACD3DC715993E56004EAE8F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		2ACD3DC815993E56004EAE8F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +110,7 @@
 		2A24F880158D8627009B1475 /* Real Time Life */ = {
 			isa = PBXGroup;
 			children = (
+				2ACD3DBA15993E33004EAE8F /* lib */,
 				2A24F8AC158D8858009B1475 /* Resources */,
 				2A24F8A6158D87AE009B1475 /* classes */,
 				2A24F8A2158D8692009B1475 /* controller */,
@@ -126,8 +146,8 @@
 		2A24F8A6158D87AE009B1475 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				2A24F8A7158D87C5009B1475 /* Annotation.h */,
-				2A24F8A8158D87C5009B1475 /* Annotation.m */,
+				2A24F8A7158D87C5009B1475 /* Event.h */,
+				2A24F8A8158D87C5009B1475 /* Event.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -148,6 +168,34 @@
 				2A24F8AF158D893C009B1475 /* profile.png */,
 			);
 			name = img;
+			sourceTree = "<group>";
+		};
+		2ACD3DBA15993E33004EAE8F /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD3DBC15993E56004EAE8F /* JSON */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		2ACD3DBC15993E56004EAE8F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD3DBD15993E56004EAE8F /* JSON.h */,
+				2ACD3DBE15993E56004EAE8F /* NSObject+SBJSON.h */,
+				2ACD3DBF15993E56004EAE8F /* NSObject+SBJSON.m */,
+				2ACD3DC015993E56004EAE8F /* NSString+SBJSON.h */,
+				2ACD3DC115993E56004EAE8F /* NSString+SBJSON.m */,
+				2ACD3DC215993E56004EAE8F /* SBJSON.h */,
+				2ACD3DC315993E56004EAE8F /* SBJSON.m */,
+				2ACD3DC415993E56004EAE8F /* SBJsonBase.h */,
+				2ACD3DC515993E56004EAE8F /* SBJsonBase.m */,
+				2ACD3DC615993E56004EAE8F /* SBJsonParser.h */,
+				2ACD3DC715993E56004EAE8F /* SBJsonParser.m */,
+				2ACD3DC815993E56004EAE8F /* SBJsonWriter.h */,
+				2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +265,14 @@
 				2A24F887158D8627009B1475 /* main.m in Sources */,
 				2A24F88B158D8627009B1475 /* AppDelegate.m in Sources */,
 				2A24F8A5158D86D7009B1475 /* MapViewController.m in Sources */,
-				2A24F8A9158D87C5009B1475 /* Annotation.m in Sources */,
+				2A24F8A9158D87C5009B1475 /* Event.m in Sources */,
 				2A83C51E158E1D14007FDF7B /* EventDetailViewController.m in Sources */,
+				2ACD3DCA15993E56004EAE8F /* NSObject+SBJSON.m in Sources */,
+				2ACD3DCB15993E56004EAE8F /* NSString+SBJSON.m in Sources */,
+				2ACD3DCC15993E56004EAE8F /* SBJSON.m in Sources */,
+				2ACD3DCD15993E56004EAE8F /* SBJsonBase.m in Sources */,
+				2ACD3DCE15993E56004EAE8F /* SBJsonParser.m in Sources */,
+				2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

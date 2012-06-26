@@ -7,7 +7,7 @@
 //
 
 #import "EventDetailViewController.h"
-#import "Annotation.h"
+#import "Event.h"
 
 
 

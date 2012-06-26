@@ -7,8 +7,10 @@
 //
 
 #import "MapViewController.h"
-#import "Annotation.h"
+#import "Event.h"
 #import "EventDetailViewController.h"
+
+#import "JSON.h"
 
 @interface MapViewController ()
 
@@ -18,7 +20,7 @@
 
 @synthesize mapView;
 @synthesize eventDetail;
-@synthesize annotationArray;
+@synthesize eventArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,73 +37,50 @@
 	//Seta o delegate do mapView para a classe.
     mapView.delegate=(id)self;
     
+    
+    self.eventArray = [[NSMutableArray alloc] init];
+    
+    
     //##############################################
     //TUDO ABAIXO DEVE SER SUBSTITUÍDO POR UMA CLASSE COM REQUISIÇÃO
     //AO BANCO DE DADOS ETC.   
     
     
-    self.annotationArray = [[NSMutableArray alloc] init];
     
-    //Seta 4 coordenadas para colocar os pins,
-	CLLocationCoordinate2D theCoordinate1;
-    theCoordinate1.latitude = 37.785309;
-    theCoordinate1.longitude = -122.409743;
-	
-	CLLocationCoordinate2D theCoordinate2;
-    theCoordinate2.latitude = 37.786428;
-    theCoordinate2.longitude = -122.405441;
-	
-	CLLocationCoordinate2D theCoordinate3;
-    theCoordinate3.latitude = 37.78792;
-    theCoordinate3.longitude = -122.407726;
-	
-	CLLocationCoordinate2D theCoordinate4;
-    theCoordinate4.latitude = 37.784987;
-    theCoordinate4.longitude = -122.407286;
-	
+    SBJSON *parser = [[SBJSON alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://timelive.herokuapp.com/all_updates.json"]];
     
-    //Cria 4 objetos do tipo annotation e seta coordenada, título e subtítulo
-	Annotation* myAnnotation1=[[Annotation alloc] init];
-	
-	myAnnotation1.coordinate=theCoordinate1;
-	myAnnotation1.title=@"É foda, truta!";
-	myAnnotation1.subtitle=@"MVaglio.";
-    myAnnotation1.idUser=1;
+    //Faz a requisição e pega um JSON como um objeto do tipo NSData
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    //Retorna o JSON como um NSString do NSData que pegamos anteriormente
+    NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    //Faz parse do JSON em objeto
+    NSArray *statuses = [parser objectWithString:json_string error:nil];
 
-	
-	Annotation* myAnnotation2=[[Annotation alloc] init];
-	
-	myAnnotation2.coordinate=theCoordinate2;
-	myAnnotation2.title=@"Acho certo sorvete com bacon!";
-	myAnnotation2.subtitle=@"BrunoAssis";
-    myAnnotation2.idUser=2;
-
-	Annotation* myAnnotation3=[[Annotation alloc] init];
-	
-	myAnnotation3.coordinate=theCoordinate3;
-	myAnnotation3.title=@"Vai tomar no cú, fdp!";
-	myAnnotation3.subtitle=@"Morone";
-    myAnnotation3.idUser=3;
-
-	
-	Annotation* myAnnotation4=[[Annotation alloc] init];
-	
-    myAnnotation4 = [[Annotation alloc] init];
-	myAnnotation4.coordinate=theCoordinate4;
-	myAnnotation4.title=@"Viv le Zé";
-	myAnnotation4.subtitle=@"MVaglio";
-    myAnnotation4.idUser=1;
-
-    
-    [self.annotationArray addObject:myAnnotation1];
-	[self.annotationArray addObject:myAnnotation2];
-	[self.annotationArray addObject:myAnnotation3];
-	[self.annotationArray addObject:myAnnotation4];
+    //Para cada objeto encontrado
+    for (NSDictionary *status in statuses)
+    {
+        Event* event=[[Event alloc] init];
+        CLLocationCoordinate2D theCoordinate;
+        
+        theCoordinate.latitude = [[status objectForKey:@"geo_latitude"] doubleValue];
+        theCoordinate.longitude = [[status objectForKey:@"geo_longitude"] doubleValue];
+        
+        event.coordinate=theCoordinate;
+        event.title=[status objectForKey:@"message"];
+        event.subtitle=@"Teste.";
+        event.idUser=[[status objectForKey:@"id"] intValue];
+        
+        [self.eventArray addObject:event];
+        
+    }
     
     
-    //Adiciona os annotation no mapa
-    for (id <MKAnnotation> annotation in self.annotationArray) {
-        [mapView addAnnotation:annotation]; 
+    //Adiciona os events no mapa
+    for (id <MKAnnotation> event in self.eventArray) {
+        [mapView addAnnotation:event]; 
     }
     
     UIBarButtonItem* temp=[[UIBarButtonItem alloc] init];
@@ -214,7 +193,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
         EventDetailViewController *vc = [segue destinationViewController];
-        Annotation *view = (Annotation *) sender;
+        Event *view = (Event *) sender;
         vc.event = view;
 }
 
