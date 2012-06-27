@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CheckInViewController : UIViewController
+@interface CheckInViewController : UIViewController{
+    UITextField *eventMessage;
+    
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancel;
+@property (strong, nonatomic) IBOutlet UITextField *eventMessage;
+@property (weak, nonatomic) IBOutlet UIButton *postEvent;
+
+- (IBAction)textFieldReturn:(id)sender;
 
 @end

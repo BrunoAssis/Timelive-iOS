@@ -35,14 +35,17 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" id="Uua-1P-Ya9">
-                                <rect key="frame" x="20" y="65" width="280" height="77"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" id="Uua-1P-Ya9">
+                                <rect key="frame" x="20" y="65" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="DxP-qT-znr" eventType="editingDidEndOnExit" id="sdb-09-bsh"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XOl-A3-NCo">
-                                <rect key="frame" x="203" y="150" width="97" height="37"/>
+                                <rect key="frame" x="203" y="104" width="97" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Check In">
@@ -52,6 +55,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="PostEvent:" destination="DxP-qT-znr" eventType="touchUpInside" id="64L-oz-gnF"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Y2T-Y2-V18">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -65,6 +71,8 @@
                     </view>
                     <connections>
                         <outlet property="cancel" destination="cx9-EC-9Gg" id="85k-cm-sHg"/>
+                        <outlet property="eventMessage" destination="Uua-1P-Ya9" id="0w5-YV-o7m"/>
+                        <outlet property="postEvent" destination="XOl-A3-NCo" id="zGb-Tr-Rv6"/>
                     </connections>
                 </viewController>
             </objects>
@@ -167,7 +175,10 @@
         <class className="CheckInViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckInViewController.h"/>
             <relationships>
+                <relationship kind="action" name="textFieldReturn:"/>
                 <relationship kind="outlet" name="cancel" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="eventMessage" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="postEvent" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="EventDetailViewController" superclassName="UIViewController">

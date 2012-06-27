@@ -9,7 +9,6 @@
 #import "MapViewController.h"
 #import "Event.h"
 #import "EventDetailViewController.h"
-
 #import "JSON.h"
 
 @interface MapViewController ()
@@ -49,7 +48,7 @@
     //TUDO ABAIXO DEVE SER SUBSTITUÍDO POR UMA CLASSE COM REQUISIÇÃO
     //AO BANCO DE DADOS ETC.   
     
-    
+
     
     SBJSON *parser = [[SBJSON alloc] init];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://timelive.herokuapp.com/all_updates.json"]];
@@ -63,9 +62,16 @@
     //Faz parse do JSON em objeto
     NSArray *statuses = [parser objectWithString:json_string error:nil];
 
+    
+     
+    
     //Para cada objeto encontrado
     for (NSDictionary *status in statuses)
     {
+        
+        //SBJSON *parser2 = [[SBJSON alloc] init];
+        //NSArray *userData = [parser2 objectWithString:[status objectForKey:@"user"] error:nil];
+            
         Event* event=[[Event alloc] init];
         CLLocationCoordinate2D theCoordinate;
         
@@ -74,7 +80,7 @@
         
         event.coordinate=theCoordinate;
         event.title=[status objectForKey:@"message"];
-        event.subtitle=@"Teste.";
+        event.subtitle=@"Teste"; //[userData objectAtIndex:1];
         event.idUser=[[status objectForKey:@"id"] intValue];
         
         [self.eventArray addObject:event];
