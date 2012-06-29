@@ -22,6 +22,9 @@
 @synthesize eventDetail;
 @synthesize eventArray;
 
+@synthesize locationManager;
+@synthesize startLocation;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,9 +36,15 @@
 
 - (void)viewDidLoad
 {
+    
+
+    
     [super viewDidLoad];
     
     [self.checkIn setAction:@selector(CheckIn:)];
+    
+    
+    
     
 	//Seta o delegate do mapView para a classe.
     mapView.delegate=(id)self;
@@ -103,10 +112,14 @@
 - (void)viewWillAppear:(BOOL)animated {  
     
     
-    //Seta um ponto de latitude e longitude
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 37.78575;
-    zoomLocation.longitude= -122.406374;
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self; 
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
+    locationManager.distanceFilter = kCLDistanceFilterNone; 
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    // Configure the new event with information from the location
+    CLLocationCoordinate2D zoomLocation = [location coordinate];
     
     
     //Determina uma área ao redor do ponto que setei acima. É usado para determinar o "zoom" que vai iniciar o sistema.
@@ -226,9 +239,5 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 @end

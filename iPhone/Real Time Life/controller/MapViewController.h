@@ -22,11 +22,16 @@
     IBOutlet EventDetailViewController  *eventDetail;
     IBOutlet MKMapView                  *mapView;
     NSMutableArray                      *eventArray;
+    CLLocationManager                   *locationManager;
+    CLLocation                          *startLocation;
+    
 
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *checkIn;
 @property (nonatomic, retain) IBOutlet MKMapView            *mapView;
 @property (nonatomic, retain) EventDetailViewController     *eventDetail;
 @property (nonatomic, retain) NSMutableArray                *eventArray; //TODO: Modificar para Array
+@property (nonatomic, retain) CLLocationManager             *locationManager;
+@property (nonatomic, retain) CLLocation                    *startLocation;
 
 @end

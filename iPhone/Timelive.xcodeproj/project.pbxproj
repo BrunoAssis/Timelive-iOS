@@ -27,6 +27,7 @@
 		2ACD3DCE15993E56004EAE8F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC715993E56004EAE8F /* SBJsonParser.m */; };
 		2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */; };
 		2ACD3DD2159949FB004EAE8F /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */; };
+		2AE156EA159D2DA40060FE0D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE156E9159D2DA40060FE0D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		2ACD3DD0159949FB004EAE8F /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInViewController.h; path = controller/CheckInViewController.h; sourceTree = "<group>"; };
 		2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewController.m; path = controller/CheckInViewController.m; sourceTree = "<group>"; };
+		2AE156E9159D2DA40060FE0D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE156EA159D2DA40060FE0D /* CoreLocation.framework in Frameworks */,
 				2A24F8AB158D8835009B1475 /* MapKit.framework in Frameworks */,
 				2A24F87B158D8627009B1475 /* UIKit.framework in Frameworks */,
 				2A24F87D158D8627009B1475 /* Foundation.framework in Frameworks */,
@@ -85,6 +88,7 @@
 		2A24F86B158D8627009B1475 = {
 			isa = PBXGroup;
 			children = (
+				2AE156E9159D2DA40060FE0D /* CoreLocation.framework */,
 				2A24F8AA158D8835009B1475 /* MapKit.framework */,
 				2A24F880158D8627009B1475 /* Real Time Life */,
 				2A24F879158D8627009B1475 /* Frameworks */,

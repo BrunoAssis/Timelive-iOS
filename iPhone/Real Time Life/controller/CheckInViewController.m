@@ -54,10 +54,9 @@
 -(IBAction)PostEvent:(id)sender
 {
     
-    NSString *jsonRequest = @"{\"geo_latitude\":37.784181,\"geo_longitude\":-122.408488,\"message\":\"Teste Checkin\"}";
     NSLog(@"%@", jsonRequest);
     
-    NSURL *url = [NSURL URLWithString:@"http://timelive.herokuapp.com/users/1/updates/"];
+    NSURL *url = [NSURL URLWithString:@"http://timelive.herokuapp.com/users/1/updates.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
 
     [request setHTTPMethod:@"POST"];
@@ -68,5 +67,16 @@
     
     //[self dismissModalViewControllerAnimated:YES];
 }
+
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSMutableData *d = [NSMutableData data];
+    [d appendData:data];
+    
+    NSString *a = [[NSString alloc] initWithData:d encoding:NSASCIIStringEncoding];
+    
+    NSLog(@"Data: %@", a);
+}
+
 
 @end
