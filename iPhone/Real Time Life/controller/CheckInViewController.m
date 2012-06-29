@@ -54,6 +54,7 @@
 -(IBAction)PostEvent:(id)sender
 {
     
+    NSString *jsonRequest = @"{\"geo_latitude\":37.784181,\"geo_longitude\":-122.408488,\"message\":\"Teste Checkin\",\"user_id\":1}";
     NSLog(@"%@", jsonRequest);
     
     NSURL *url = [NSURL URLWithString:@"http://timelive.herokuapp.com/users/1/updates.json"];
@@ -62,6 +63,7 @@
     [request setHTTPMethod:@"POST"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];  
+    [request setHTTPBody:[jsonRequest dataUsingEncoding:NSUTF8StringEncoding]];
     [NSURLConnection connectionWithRequest:request delegate:self];
     
     
