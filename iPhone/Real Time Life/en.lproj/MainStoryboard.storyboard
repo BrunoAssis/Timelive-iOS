@@ -95,6 +95,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem systemItem="refresh" id="YIP-Be-fpM"/>
                                     <barButtonItem title="Check In" id="cz2-WJ-RYM"/>
                                 </items>
                             </toolbar>
@@ -106,6 +107,7 @@
                     <connections>
                         <outlet property="checkIn" destination="cz2-WJ-RYM" id="UdE-PS-DW5"/>
                         <outlet property="mapView" destination="UBP-2c-0Pu" id="f3A-hD-CfU"/>
+                        <outlet property="refresh" destination="YIP-Be-fpM" id="hr2-Cf-1Ot"/>
                         <segue destination="nd6-Qq-czl" kind="modal" identifier="eventDetailSegue" id="PAb-43-NcZ"/>
                         <segue destination="Zv1-X4-ssc" kind="modal" identifier="checkInSegue" id="tty-eY-s6W"/>
                     </connections>
@@ -195,6 +197,7 @@
                 <relationship kind="outlet" name="checkIn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="eventDetail" candidateClass="EventDetailViewController"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
     </classes>

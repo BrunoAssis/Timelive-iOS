@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
 
 @interface CheckInViewController : UIViewController{
     UITextField *eventMessage;
+    CLLocationCoordinate2D Location;
     
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancel;
 @property (strong, nonatomic) IBOutlet UITextField *eventMessage;
 @property (weak, nonatomic) IBOutlet UIButton *postEvent;
+@property (nonatomic, assign) CLLocationCoordinate2D Location;
 
 - (IBAction)textFieldReturn:(id)sender;
 

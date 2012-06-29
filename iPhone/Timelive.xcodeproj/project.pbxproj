@@ -28,6 +28,8 @@
 		2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC915993E56004EAE8F /* SBJsonWriter.m */; };
 		2ACD3DD2159949FB004EAE8F /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */; };
 		2AE156EA159D2DA40060FE0D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE156E9159D2DA40060FE0D /* CoreLocation.framework */; };
+		2AE156F1159D36F30060FE0D /* timelive-ico.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE156F0159D36F30060FE0D /* timelive-ico.png */; };
+		2AE156F3159D36FA0060FE0D /* timelive-ico-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE156F2159D36FA0060FE0D /* timelive-ico-retina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		2ACD3DD0159949FB004EAE8F /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInViewController.h; path = controller/CheckInViewController.h; sourceTree = "<group>"; };
 		2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewController.m; path = controller/CheckInViewController.m; sourceTree = "<group>"; };
 		2AE156E9159D2DA40060FE0D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2AE156F0159D36F30060FE0D /* timelive-ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timelive-ico.png"; sourceTree = "<group>"; };
+		2AE156F2159D36FA0060FE0D /* timelive-ico-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timelive-ico-retina.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 		2A24F86B158D8627009B1475 = {
 			isa = PBXGroup;
 			children = (
+				2AE156F2159D36FA0060FE0D /* timelive-ico-retina.png */,
+				2AE156F0159D36F30060FE0D /* timelive-ico.png */,
 				2AE156E9159D2DA40060FE0D /* CoreLocation.framework */,
 				2A24F8AA158D8835009B1475 /* MapKit.framework */,
 				2A24F880158D8627009B1475 /* Real Time Life */,
@@ -261,6 +267,8 @@
 				2A24F88E158D8627009B1475 /* MainStoryboard.storyboard in Resources */,
 				2A24F8B0158D893C009B1475 /* event.png in Resources */,
 				2A24F8B1158D893C009B1475 /* profile.png in Resources */,
+				2AE156F1159D36F30060FE0D /* timelive-ico.png in Resources */,
+				2AE156F3159D36FA0060FE0D /* timelive-ico-retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

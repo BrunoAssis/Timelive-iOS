@@ -24,14 +24,17 @@
     NSMutableArray                      *eventArray;
     CLLocationManager                   *locationManager;
     CLLocation                          *startLocation;
+    CLLocationCoordinate2D              zoomLocation;
     
 
 }
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *checkIn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem        *checkIn;
 @property (nonatomic, retain) IBOutlet MKMapView            *mapView;
 @property (nonatomic, retain) EventDetailViewController     *eventDetail;
 @property (nonatomic, retain) NSMutableArray                *eventArray; //TODO: Modificar para Array
 @property (nonatomic, retain) CLLocationManager             *locationManager;
 @property (nonatomic, retain) CLLocation                    *startLocation;
+@property (nonatomic, assign) CLLocationCoordinate2D        zoomLocation;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem        *refresh;
 
 @end

@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "Event.h"
 #import "EventDetailViewController.h"
+#import "CheckInViewController.h"
 #import "JSON.h"
 
 @interface MapViewController ()
@@ -24,6 +25,8 @@
 
 @synthesize locationManager;
 @synthesize startLocation;
+@synthesize zoomLocation;
+@synthesize refresh;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,69 +45,15 @@
     [super viewDidLoad];
     
     [self.checkIn setAction:@selector(CheckIn:)];
+    [self.refresh setAction:@selector(RefreshScreen)];
     
     
-    
+    [self RefreshScreen];
     
 	//Seta o delegate do mapView para a classe.
     mapView.delegate=(id)self;
     
     
-    self.eventArray = [[NSMutableArray alloc] init];
-    
-    
-    //##############################################
-    //TUDO ABAIXO DEVE SER SUBSTITUÍDO POR UMA CLASSE COM REQUISIÇÃO
-    //AO BANCO DE DADOS ETC.   
-    
-
-    
-    SBJSON *parser = [[SBJSON alloc] init];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://timelive.herokuapp.com/all_updates.json"]];
-    
-    //Faz a requisição e pega um JSON como um objeto do tipo NSData
-    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    //Retorna o JSON como um NSString do NSData que pegamos anteriormente
-    NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-    
-    //Faz parse do JSON em objeto
-    NSArray *statuses = [parser objectWithString:json_string error:nil];
-
-    
-     
-    
-    //Para cada objeto encontrado
-    for (NSDictionary *status in statuses)
-    {
-        
-        //SBJSON *parser2 = [[SBJSON alloc] init];
-        //NSArray *userData = [parser2 objectWithString:[status objectForKey:@"user"] error:nil];
-            
-        Event* event=[[Event alloc] init];
-        CLLocationCoordinate2D theCoordinate;
-        
-        theCoordinate.latitude = [[status objectForKey:@"geo_latitude"] doubleValue];
-        theCoordinate.longitude = [[status objectForKey:@"geo_longitude"] doubleValue];
-        
-        event.coordinate=theCoordinate;
-        event.title=[status objectForKey:@"message"];
-        event.subtitle=@"Teste"; //[userData objectAtIndex:1];
-        event.idUser=[[status objectForKey:@"id"] intValue];
-        
-        [self.eventArray addObject:event];
-        
-    }
-    
-    
-    //Adiciona os events no mapa
-    for (id <MKAnnotation> event in self.eventArray) {
-        [mapView addAnnotation:event]; 
-    }
-    
-    UIBarButtonItem* temp=[[UIBarButtonItem alloc] init];
-	temp.title=@"Back";
-	self.navigationItem.backBarButtonItem=temp;
 }
 
 
@@ -113,17 +62,17 @@
     
     
     locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self; 
+    //locationManager.delegate = self; 
     locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
     locationManager.distanceFilter = kCLDistanceFilterNone; 
     [locationManager startUpdatingLocation];
     CLLocation *location = [locationManager location];
     // Configure the new event with information from the location
-    CLLocationCoordinate2D zoomLocation = [location coordinate];
+    self.zoomLocation = [location coordinate];
     
     
     //Determina uma área ao redor do ponto que setei acima. É usado para determinar o "zoom" que vai iniciar o sistema.
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.zoomLocation , 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     
     
     //Aqui é para trimar a área que selecionamos para caber dentro da tela.
@@ -219,6 +168,9 @@
         EventDetailViewController *vc = [segue destinationViewController];
         Event *view = (Event *) sender;
         vc.event = view;
+    }else if([[segue identifier] isEqualToString:@"checkInSegue"]){
+        CheckInViewController *checkin = [segue destinationViewController];
+        checkin.Location = self.zoomLocation;
     }
 }
 
@@ -228,6 +180,67 @@
     [self performSegueWithIdentifier: @"checkInSegue" sender: sender];
 }
 
+-(void)RefreshScreen{
+    
+    
+    for (int i =0; i < [mapView.annotations count]; i++) { 
+        if ([[mapView.annotations objectAtIndex:i] isKindOfClass:[Event class]]) {                      
+            [mapView removeAnnotation:[mapView.annotations objectAtIndex:i]]; 
+        } 
+    }
+    
+    
+    //##############################################
+    //TUDO ABAIXO DEVE SER SUBSTITUÍDO POR UMA CLASSE COM REQUISIÇÃO
+    //AO BANCO DE DADOS ETC.   
+    
+    self.eventArray = [[NSMutableArray alloc] init];
+    
+    SBJSON *parser = [[SBJSON alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://timelive.herokuapp.com/all_updates.json"]];
+    
+    //Faz a requisição e pega um JSON como um objeto do tipo NSData
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    //Retorna o JSON como um NSString do NSData que pegamos anteriormente
+    NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    //Faz parse do JSON em objeto
+    NSArray *statuses = [parser objectWithString:json_string error:nil];
+    
+    
+    
+    
+    //Para cada objeto encontrado
+    for (NSDictionary *status in statuses)
+    {
+        
+        Event* event=[[Event alloc] init];
+        CLLocationCoordinate2D theCoordinate;
+        
+        theCoordinate.latitude = [[status objectForKey:@"geo_latitude"] doubleValue];
+        theCoordinate.longitude = [[status objectForKey:@"geo_longitude"] doubleValue];
+        
+        event.coordinate=theCoordinate;
+        event.title=[status objectForKey:@"message"];
+        event.subtitle=@"Teste";
+        event.idUser=[[status objectForKey:@"id"] intValue];
+        
+        [self.eventArray addObject:event];
+        
+    }
+    
+    
+    //Adiciona os events no mapa
+    for (id <MKAnnotation> event in self.eventArray) {
+        [mapView addAnnotation:event]; 
+    }
+    
+    UIBarButtonItem* temp=[[UIBarButtonItem alloc] init];
+	temp.title=@"Back";
+	self.navigationItem.backBarButtonItem=temp;
+    
+}
 
 
 
@@ -235,6 +248,7 @@
 {
     [self setMapView:nil];
     [self setCheckIn:nil];
+    [self setRefresh:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
