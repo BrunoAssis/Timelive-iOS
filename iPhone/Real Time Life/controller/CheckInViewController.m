@@ -58,9 +58,7 @@
     NSString *latitude = [[NSNumber numberWithFloat:self.Location.latitude] stringValue];
     NSString *longitude = [[NSNumber numberWithFloat:self.Location.longitude] stringValue];
     
-    
     NSString *jsonRequest = [NSString stringWithFormat:@"{\"geo_latitude\":%@,\"geo_longitude\":%@,\"message\":\"%@\",\"user_id\":1}", latitude, longitude, self.eventMessage.text];
-    NSLog(@"%@", jsonRequest);
     
     NSURL *url = [NSURL URLWithString:@"http://timelive.herokuapp.com/users/1/updates.json"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -70,8 +68,8 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];  
     [request setHTTPBody:[jsonRequest dataUsingEncoding:NSUTF8StringEncoding]];
     [NSURLConnection connectionWithRequest:request delegate:self];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -79,9 +77,12 @@
     NSMutableData *d = [NSMutableData data];
     [d appendData:data];
     
-    NSString *a = [[NSString alloc] initWithData:d encoding:NSASCIIStringEncoding];
+    [self dismissModalViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CheckinComplete" object:nil];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+   // NSString *a = [[NSString alloc] initWithData:d encoding:NSASCIIStringEncoding];
     
-    NSLog(@"Data: %@", a);
+    //NSLog(@"Data: %@", a);
 }
 
 

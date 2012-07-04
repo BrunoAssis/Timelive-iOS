@@ -27,6 +27,7 @@
 @synthesize startLocation;
 @synthesize zoomLocation;
 @synthesize refresh;
+@synthesize resetLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,50 +40,79 @@
 
 - (void)viewDidLoad
 {
-    
-
-    
+     
     [super viewDidLoad];
     
     [self.checkIn setAction:@selector(CheckIn:)];
-    [self.refresh setAction:@selector(RefreshScreen)];
+    
+    //Faz o setup das coordenads
+    [self ResetUserLocation: self];
     
     
-    [self RefreshScreen];
+    [self RefreshScreen: self];
     
 	//Seta o delegate do mapView para a classe.
     mapView.delegate=(id)self;
     
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowButton)];
+    panGesture.delegate = self;
+    [self.mapView addGestureRecognizer:panGesture];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RefreshScreen:) name:@"CheckinComplete" object:nil];
+    
     
 }
 
+- (void)ShowButton
+{
+    if(refresh.alpha == 0.0){
+        [UIView animateWithDuration:0.25 animations:^{refresh.alpha = 1.0;}];
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {   
+    return YES;
+}
 
 
-- (void)viewWillAppear:(BOOL)animated {  
-    
+-(IBAction)ResetUserLocation:(id)sender{
     
     locationManager = [[CLLocationManager alloc] init];
-    //locationManager.delegate = self; 
     locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
     locationManager.distanceFilter = kCLDistanceFilterNone; 
     [locationManager startUpdatingLocation];
     CLLocation *location = [locationManager location];
-    // Configure the new event with information from the location
+    self.zoomLocation = [location coordinate];
+    
+     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.zoomLocation , 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+     MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion]; 
+    [mapView setRegion:adjustedRegion animated:YES]; 
+    
+}
+
+- (void) LoadCoordinationSetup{
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
+    locationManager.distanceFilter = kCLDistanceFilterNone; 
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
     self.zoomLocation = [location coordinate];
     
     
     //Determina uma área ao redor do ponto que setei acima. É usado para determinar o "zoom" que vai iniciar o sistema.
+    //MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.zoomLocation , 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.zoomLocation , 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion]; 
+    [mapView setRegion:adjustedRegion animated:YES]; 
     
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {  
     
-    //Aqui é para trimar a área que selecionamos para caber dentro da tela.
-    MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion];                
-    
-    //Seta o mapa para híbrido.
-    //mapView.mapType = MKMapTypeHybrid;
-    
-    //Associa a região e o zoom ao objeto MAPA.
-    [mapView setRegion:adjustedRegion animated:YES];   
+     
     
 }
 
@@ -180,8 +210,18 @@
     [self performSegueWithIdentifier: @"checkInSegue" sender: sender];
 }
 
--(void)RefreshScreen{
+
+-(IBAction)LookForUpdates:(id)sender{
+       [UIView animateWithDuration:0.25 animations:^{refresh.alpha = 0.0;}];
     
+    [self performSelectorInBackground:@selector(RefreshScreen:) withObject:self];
+       //[self RefreshScreen: self];
+}
+
+-(IBAction)RefreshScreen:(id)sender
+{
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     for (int i =0; i < [mapView.annotations count]; i++) { 
         if ([[mapView.annotations objectAtIndex:i] isKindOfClass:[Event class]]) {                      
@@ -223,8 +263,9 @@
         
         event.coordinate=theCoordinate;
         event.title=[status objectForKey:@"message"];
-        event.subtitle=@"Teste";
-        event.idUser=[[status objectForKey:@"id"] intValue];
+        event.subtitle=[[status objectForKey:@"user"] objectForKey:@"name"];
+        event.idUser=[[[status objectForKey:@"user"] objectForKey:@"name"] intValue];
+        event.idUpdate = [[status objectForKey:@"id"] intValue];
         
         [self.eventArray addObject:event];
         
@@ -240,7 +281,10 @@
 	temp.title=@"Back";
 	self.navigationItem.backBarButtonItem=temp;
     
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
 }
+
 
 
 
@@ -248,6 +292,8 @@
 {
     [self setMapView:nil];
     [self setCheckIn:nil];
+    [self setRefresh:nil];
+    [self setResetLocation:nil];
     [self setRefresh:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.

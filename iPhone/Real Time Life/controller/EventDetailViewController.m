@@ -26,8 +26,10 @@
     //Ao carregar a tela, aponta a função BackToMap para o botão.
     [self.done setAction:@selector(BackToMap:)];
     
+    
     self.lblMessage.text = event.title;
     self.lblUsername.text = event.subtitle;
+
     
 }
 

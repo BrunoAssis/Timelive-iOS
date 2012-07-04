@@ -15,6 +15,7 @@
 @synthesize title;
 @synthesize subtitle;
 @synthesize idUser;
+@synthesize idUpdate;
 
 - (void) dealloc
 {
@@ -22,6 +23,7 @@
     self.title = nil;
     self.subtitle = nil;
     self.idUser = 0;
+    self.idUpdate = 0;
 }
 
 @end

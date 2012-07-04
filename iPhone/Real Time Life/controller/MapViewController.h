@@ -25,6 +25,7 @@
     CLLocationManager                   *locationManager;
     CLLocation                          *startLocation;
     CLLocationCoordinate2D              zoomLocation;
+    UIButton                            *resetLocation;
     
 
 }
@@ -35,6 +36,12 @@
 @property (nonatomic, retain) CLLocationManager             *locationManager;
 @property (nonatomic, retain) CLLocation                    *startLocation;
 @property (nonatomic, assign) CLLocationCoordinate2D        zoomLocation;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem        *refresh;
+@property (nonatomic, retain) IBOutlet UIButton             *resetLocation;
+@property (weak, nonatomic) IBOutlet UIButton               *refresh;
+    
+
+
+
+
 
 @end
