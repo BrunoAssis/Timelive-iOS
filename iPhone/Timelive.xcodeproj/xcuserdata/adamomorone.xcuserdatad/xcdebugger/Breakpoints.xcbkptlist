@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Real Time Life/controller/MapViewController.m"
-         timestampString = "363218843.536474"
+         timestampString = "363221156.598344"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "227"
-         endingLineNumber = "227"
+         startingLineNumber = "219"
+         endingLineNumber = "219"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Real Time Life/controller/MapViewController.m"
-         timestampString = "363218843.536474"
+         timestampString = "363221156.598344"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "241"
-         endingLineNumber = "241"
+         startingLineNumber = "233"
+         endingLineNumber = "233"
          landmarkName = "-LookForUpdates:"
          landmarkType = "5">
       </FileBreakpoint>

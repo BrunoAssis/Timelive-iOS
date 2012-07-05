@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Facebook.h"
 
-@interface ProfileViewController : UIViewController
-
+@interface ProfileViewController : UIViewController  <FBRequestDelegate>{
+    Facebook    *facebook;
+}
+@property (weak, nonatomic) IBOutlet UILabel                *lblUserName;
+@property (weak, nonatomic) IBOutlet UIButton               *logout;
+@property (nonatomic, retain) Facebook                      *facebook;
 @end

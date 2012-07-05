@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A06C47A15A6493800FCF52F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A06C47915A6493800FCF52F /* ProfileViewController.m */; };
+		2A06C47E15A6510A00FCF52F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A06C47D15A6510A00FCF52F /* User.m */; };
 		2A24F87B158D8627009B1475 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F87A158D8627009B1475 /* UIKit.framework */; };
 		2A24F87D158D8627009B1475 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F87C158D8627009B1475 /* Foundation.framework */; };
 		2A24F87F158D8627009B1475 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A24F87E158D8627009B1475 /* CoreGraphics.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A06C47815A6493800FCF52F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = controller/ProfileViewController.h; sourceTree = "<group>"; };
+		2A06C47915A6493800FCF52F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = controller/ProfileViewController.m; sourceTree = "<group>"; };
+		2A06C47C15A6510A00FCF52F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = classes/User.h; sourceTree = "<group>"; };
+		2A06C47D15A6510A00FCF52F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = classes/User.m; sourceTree = "<group>"; };
 		2A24F876158D8627009B1475 /* Timelive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timelive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A24F87A158D8627009B1475 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A24F87C158D8627009B1475 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,6 +184,8 @@
 				2A83C51D158E1D14007FDF7B /* EventDetailViewController.m */,
 				2ACD3DD0159949FB004EAE8F /* CheckInViewController.h */,
 				2ACD3DD1159949FB004EAE8F /* CheckInViewController.m */,
+				2A06C47815A6493800FCF52F /* ProfileViewController.h */,
+				2A06C47915A6493800FCF52F /* ProfileViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -187,6 +195,8 @@
 			children = (
 				2A24F8A7158D87C5009B1475 /* Event.h */,
 				2A24F8A8158D87C5009B1475 /* Event.m */,
+				2A06C47C15A6510A00FCF52F /* User.h */,
+				2A06C47D15A6510A00FCF52F /* User.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -341,6 +351,8 @@
 				2ACD3DCE15993E56004EAE8F /* SBJsonParser.m in Sources */,
 				2ACD3DCF15993E56004EAE8F /* SBJsonWriter.m in Sources */,
 				2ACD3DD2159949FB004EAE8F /* CheckInViewController.m in Sources */,
+				2A06C47A15A6493800FCF52F /* ProfileViewController.m in Sources */,
+				2A06C47E15A6510A00FCF52F /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

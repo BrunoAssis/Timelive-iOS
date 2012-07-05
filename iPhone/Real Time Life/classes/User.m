@@ -10,4 +10,14 @@
 
 @implementation User
 
+@synthesize Id;
+@synthesize Name;
+
+
+-(void) dealloc{
+    self.Id     = 0;
+    self.Name   = nil;
+}
 @end
+
+
