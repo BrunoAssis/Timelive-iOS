@@ -18,7 +18,7 @@
 
 @class EventDetailViewController;
 
-@interface MapViewController : UIViewController <FBRequestDelegate>{
+@interface MapViewController : UIViewController{
     
     IBOutlet EventDetailViewController  *eventDetail;
     IBOutlet MKMapView                  *mapView;
@@ -27,7 +27,7 @@
     CLLocation                          *startLocation;
     CLLocationCoordinate2D              zoomLocation;
     UIButton                            *resetLocation;
-    Facebook                            *facebook;
+    //Facebook                            *facebook;
     UIPanGestureRecognizer              *panGesture;
     
     
@@ -42,7 +42,7 @@
 @property (nonatomic, assign) CLLocationCoordinate2D        zoomLocation;
 @property (nonatomic, retain) IBOutlet UIButton             *resetLocation;
 @property (weak, nonatomic) IBOutlet UIButton               *refresh;
-@property (nonatomic, retain) Facebook                      *facebook;
+//@property (nonatomic, retain) Facebook                      *facebook;
 @property (strong, nonatomic) UIPanGestureRecognizer        *panGesture;
 
 
