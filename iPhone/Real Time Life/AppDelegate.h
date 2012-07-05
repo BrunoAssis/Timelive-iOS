@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate>{
+    Facebook *facebook;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) Facebook *facebook;
+
+- (void)fbDidLogin;
+- (void)fbDidNotLogin:(BOOL)cancelled;
+- (void)fbDidLogout;
+- (void)fbDidExtendToken:(NSString*)accessToken
+               expiresAt:(NSDate*)expiresAt;
+- (void)fbSessionInvalidated;
 
 @end

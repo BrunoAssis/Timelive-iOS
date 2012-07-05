@@ -11,13 +11,14 @@
 
 #import "EventDetailViewController.h"
 #import "Event.h"
+#import "Facebook.h"
 
 //Define uma constante gringa para metros por milha.
 #define METERS_PER_MILE 1609.344
 
 @class EventDetailViewController;
 
-@interface MapViewController : UIViewController{
+@interface MapViewController : UIViewController <FBRequestDelegate>{
     
     IBOutlet EventDetailViewController  *eventDetail;
     IBOutlet MKMapView                  *mapView;
@@ -26,6 +27,9 @@
     CLLocation                          *startLocation;
     CLLocationCoordinate2D              zoomLocation;
     UIButton                            *resetLocation;
+    Facebook                            *facebook;
+    UIPanGestureRecognizer              *panGesture;
+    
     
 
 }
@@ -38,7 +42,8 @@
 @property (nonatomic, assign) CLLocationCoordinate2D        zoomLocation;
 @property (nonatomic, retain) IBOutlet UIButton             *resetLocation;
 @property (weak, nonatomic) IBOutlet UIButton               *refresh;
-    
+@property (nonatomic, retain) Facebook                      *facebook;
+@property (strong, nonatomic) UIPanGestureRecognizer        *panGesture;
 
 
 

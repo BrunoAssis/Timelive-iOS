@@ -11,6 +11,9 @@
 #import "EventDetailViewController.h"
 #import "CheckInViewController.h"
 #import "JSON.h"
+#import "AppDelegate.h"
+
+#import "Facebook.h"
 
 @interface MapViewController ()
 
@@ -28,6 +31,9 @@
 @synthesize zoomLocation;
 @synthesize refresh;
 @synthesize resetLocation;
+@synthesize panGesture;
+
+@synthesize facebook;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +51,10 @@
     
     [self.checkIn setAction:@selector(CheckIn:)];
     
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    facebook = [appDelegate facebook];
+    
     //Faz o setup das coordenads
     [self ResetUserLocation: self];
     
@@ -54,14 +64,31 @@
 	//Seta o delegate do mapView para a classe.
     mapView.delegate=(id)self;
     
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowButton)];
-    panGesture.delegate = self;
-    [self.mapView addGestureRecognizer:panGesture];
+    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowButton)];
+    self.panGesture.delegate = self;
+    
+    
+    [self.mapView addGestureRecognizer:self.panGesture];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RefreshScreen:) name:@"CheckinComplete" object:nil];
     
+    [facebook requestWithGraphPath:@"me/picture" andDelegate:self];
+    //[facebook requestWithGraphPath:@"me/friends" andDelegate:self];
+    //[facebook requestWithGraphPath:@"platform/posts" andDelegate:self];
     
+    
+}
+
+
+- (void)request:(FBRequest *)request didLoad:(id)result{
+    NSLog(@"Pegou dados do Facebook: %@", result);
+}
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{
+    NSLog(@"%@", error);
+}
+- (void)requestLoading:(FBRequest *)request{
+    NSLog(@"Mensagem enviada");
 }
 
 - (void)ShowButton

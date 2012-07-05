@@ -228,6 +228,7 @@
                 <relationship kind="outlet" name="checkIn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="eventDetail" candidateClass="EventDetailViewController"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="panMap" candidateClass="UIPanGestureRecognizer"/>
                 <relationship kind="outlet" name="refresh" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="resetLocation" candidateClass="UIButton"/>
             </relationships>
