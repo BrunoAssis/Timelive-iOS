@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject{
+    NSInteger   Id;
+    NSString*   Name;
+}
+
+@property (nonatomic, assign)   NSInteger    Id;
+@property (nonatomic, copy)     NSString*    Name;
 
 @end

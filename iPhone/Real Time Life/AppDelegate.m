@@ -73,14 +73,23 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    NSLog(@"Logou");
     [defaults synchronize];
     
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled{}
-- (void)fbDidLogout{}
-- (void)fbDidExtendToken:(NSString*)accessToken
-               expiresAt:(NSDate*)expiresAt{}
+- (void)fbDidLogout{
+    // Remove saved authorization information if it exists
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"]) {
+        [defaults removeObjectForKey:@"FBAccessTokenKey"];
+        [defaults removeObjectForKey:@"FBExpirationDateKey"];
+        [defaults synchronize];
+    }
+    NSLog(@"Apagou Token");
+}
+- (void)fbDidExtendToken:(NSString*)accessToken expiresAt:(NSDate*)expiresAt{}
 - (void)fbSessionInvalidated{}
 
 @end
