@@ -32,21 +32,24 @@
      }
     
     if (![self.facebook isSessionValid]) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        
-        self.window.rootViewController = vc;
-        self.window.alpha = 0.0;
-        [self.window makeKeyAndVisible];
-        [UIView beginAnimations:nil context:nil];
-        self.window.alpha = 1.0;
-        [UIView commitAnimations];
         
         
         NSLog(@"Sessão inválida, faça login");
     }
     
     return YES;
+}
+
+-(void)CallLoginScreen{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    
+    self.window.rootViewController = vc;
+    //self.window.alpha = 0.0;
+    [self.window makeKeyAndVisible];
+    //[UIView beginAnimations:nil context:nil];
+    //self.window.alpha = 1.0;
+    //[UIView commitAnimations];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -113,6 +116,7 @@
         [defaults removeObjectForKey:@"FBAccessTokenKey"];
         [defaults removeObjectForKey:@"FBExpirationDateKey"];
         [defaults synchronize];
+        [self CallLoginScreen];
     }
     NSLog(@"Apagou Token HERE");
 }

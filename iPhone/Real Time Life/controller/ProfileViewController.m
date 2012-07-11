@@ -49,6 +49,7 @@
     
     NSLog(@"Clicou para deslogar");
     [self.facebook logout];
+    
 }
 
 - (void)viewDidUnload
