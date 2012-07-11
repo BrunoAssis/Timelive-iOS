@@ -8,25 +8,44 @@
 
 #import "AppDelegate.h"
 
+#import "LoginViewController.h"
+
+
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize facebook;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     facebook = [[Facebook alloc] initWithAppId:@"471418506203680" andDelegate:self];
+    NSLog(@"App Init");
+    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"FBAccessTokenKey"] 
-        && [defaults objectForKey:@"FBExpirationDateKey"]) {
+     
+     if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
         facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+        NSLog(@"Pegou token!");
+     }
+    
+    if (![self.facebook isSessionValid]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        self.window.rootViewController = vc;
+        self.window.alpha = 0.0;
+        [self.window makeKeyAndVisible];
+        [UIView beginAnimations:nil context:nil];
+        self.window.alpha = 1.0;
+        [UIView commitAnimations];
+        
+        
+        NSLog(@"Sessão inválida, faça login");
     }
     
-    if (![facebook isSessionValid]) {
-        [facebook authorize:nil];
-    }
     return YES;
 }
 							
@@ -69,16 +88,24 @@
     return [facebook handleOpenURL:url]; 
 }
 
-- (void)fbDidLogin {
+- (void)fbDidLogin{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
-    NSLog(@"Logou");
     [defaults synchronize];
     
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+    
+    NSLog(@"Logou");
 }
 
-- (void)fbDidNotLogin:(BOOL)cancelled{}
+- (void)fbDidNotLogin:(BOOL)cancelled{
+    NSLog(@"Cancelou login");
+}
 - (void)fbDidLogout{
     // Remove saved authorization information if it exists
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -87,9 +114,13 @@
         [defaults removeObjectForKey:@"FBExpirationDateKey"];
         [defaults synchronize];
     }
-    NSLog(@"Apagou Token");
+    NSLog(@"Apagou Token HERE");
 }
-- (void)fbDidExtendToken:(NSString*)accessToken expiresAt:(NSDate*)expiresAt{}
-- (void)fbSessionInvalidated{}
+- (void)fbDidExtendToken:(NSString*)accessToken expiresAt:(NSDate*)expiresAt{
+     NSLog(@"Extendeu login");
+}
+- (void)fbSessionInvalidated{
+ NSLog(@"Sessão inválida");
+}
 
 @end
