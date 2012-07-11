@@ -34,15 +34,21 @@
     [super viewDidLoad];
 	
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    facebook = [appDelegate facebook];
+    self.facebook = [appDelegate facebook];
     
-    [facebook requestWithGraphPath:@"me" andDelegate:self];
+    [self.facebook requestWithGraphPath:@"me" andDelegate:self];
     
     [self.logout addTarget:self action:@selector(LogoutAccount) forControlEvents:UIControlEventTouchUpInside];
 
+    NSLog(@"Apareceu");
     
     
+}
+
+-(void)LogoutAccount{
     
+    NSLog(@"Clicou para deslogar");
+    [self.facebook logout];
 }
 
 - (void)viewDidUnload
@@ -51,24 +57,6 @@
     [self setLogout:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-}
-
-
-- (void)request:(FBRequest *)request didLoad:(id)result{
-    NSLog(@"Pegou dados do Facebook: %@", result);
-}
-- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{
-    NSLog(@"%@", error);
-}
-- (void)requestLoading:(FBRequest *)request{
-    NSLog(@"Mensagem enviada");
-}
-
-
-
--(void)LogoutAccount{
-    [facebook logout];
-    NSLog(@"Clicou Deslogar");
 }
 
 

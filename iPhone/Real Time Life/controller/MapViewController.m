@@ -11,9 +11,8 @@
 #import "EventDetailViewController.h"
 #import "CheckInViewController.h"
 #import "JSON.h"
-//#import "AppDelegate.h"
+#import "AppDelegate.h"
 
-#import "Facebook.h"
 
 @interface MapViewController ()
 
@@ -33,7 +32,6 @@
 @synthesize resetLocation;
 @synthesize panGesture;
 
-//@synthesize facebook;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,11 +47,9 @@
      
     [super viewDidLoad];
     
+    
     [self.checkIn setAction:@selector(CheckIn:)];
     
-    
-    //AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //facebook = [appDelegate facebook];
     
     //Faz o setup das coordenads
     [self ResetUserLocation: self];
@@ -72,12 +68,7 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RefreshScreen:) name:@"CheckinComplete" object:nil];
-    
-   
-    //[facebook requestWithGraphPath:@"me/friends" andDelegate:self];
-    //[facebook requestWithGraphPath:@"platform/posts" andDelegate:self];
-    
-    
+
 }
 
 
@@ -126,14 +117,10 @@
     MKCoordinateRegion adjustedRegion = [mapView regionThatFits:viewRegion]; 
     [mapView setRegion:adjustedRegion animated:YES]; 
     
-}
-
-
-- (void)viewWillAppear:(BOOL)animated {  
     
-     
     
 }
+
 
 
 

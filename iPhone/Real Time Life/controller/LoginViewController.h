@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Facebook.h"
 
-@interface LoginViewController : UIViewController
 
+@interface LoginViewController : UIViewController{
+    Facebook *facebook;
+}
+@property (weak, nonatomic) IBOutlet UIButton *facebookLogin;
+@property (nonatomic, retain) Facebook *facebook;
 @end
