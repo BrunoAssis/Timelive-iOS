@@ -33,6 +33,7 @@
     
     if (![self.facebook isSessionValid]) {
         
+        [self CallLoginScreen];
         
         NSLog(@"Sessão inválida, faça login");
     }
