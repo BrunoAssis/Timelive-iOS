@@ -61,7 +61,7 @@
     mapView.delegate=(id)self;
     
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ShowButton)];
-    self.panGesture.delegate = self;
+    self.panGesture.delegate = (id)self;
     
     
     [self.mapView addGestureRecognizer:self.panGesture];

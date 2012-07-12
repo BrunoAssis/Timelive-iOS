@@ -26,8 +26,8 @@
 		2A2639A7159E526B003D7C16 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2639A6159E526B003D7C16 /* Default@2x.png */; };
 		2A83C51E158E1D14007FDF7B /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A83C51D158E1D14007FDF7B /* EventDetailViewController.m */; };
 		2ABE52B315AE3E1300CE63A1 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ABE52B215AE3E1300CE63A1 /* facebook.png */; };
+		2ABE52B415AE4A8D00CE63A1 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC7451215A6436A009C145D /* libfacebook_ios_sdk.a */; };
 		2AC7451915A6436A009C145D /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2AC7450C15A6436A009C145D /* FBDialog.bundle */; };
-		2AC7451A15A6436A009C145D /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC7451215A6436A009C145D /* libfacebook_ios_sdk.a */; };
 		2ACD3DCA15993E56004EAE8F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DBF15993E56004EAE8F /* NSObject+SBJSON.m */; };
 		2ACD3DCB15993E56004EAE8F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC115993E56004EAE8F /* NSString+SBJSON.m */; };
 		2ACD3DCC15993E56004EAE8F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD3DC315993E56004EAE8F /* SBJSON.m */; };
@@ -110,12 +110,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABE52B415AE4A8D00CE63A1 /* libfacebook_ios_sdk.a in Frameworks */,
 				2AE156EA159D2DA40060FE0D /* CoreLocation.framework in Frameworks */,
 				2A24F8AB158D8835009B1475 /* MapKit.framework in Frameworks */,
 				2A24F87B158D8627009B1475 /* UIKit.framework in Frameworks */,
 				2A24F87D158D8627009B1475 /* Foundation.framework in Frameworks */,
 				2A24F87F158D8627009B1475 /* CoreGraphics.framework in Frameworks */,
-				2AC7451A15A6436A009C145D /* libfacebook_ios_sdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +441,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Real Time Life/Timelive-Prefix.pch";
 				INFOPLIST_FILE = "Real Time Life/Timelive-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Real Time Life/facebook-ios-sdk\"",
+				);
 				PRODUCT_NAME = Timelive;
 				WRAPPER_EXTENSION = app;
 			};
@@ -452,6 +456,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Real Time Life/Timelive-Prefix.pch";
 				INFOPLIST_FILE = "Real Time Life/Timelive-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Real Time Life/facebook-ios-sdk\"",
+				);
 				PRODUCT_NAME = Timelive;
 				WRAPPER_EXTENSION = app;
 			};
